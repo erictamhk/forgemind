@@ -11,6 +11,21 @@
 ### Agent Discipline
 **All AI agents must be disciplined** - strictly following their defined roles, prompts, and principles. This addresses the core pain point of undisciplined AI behavior in coding and development.
 
+### Disciplined Process
+**Plan → Ask → Execute**: All agents must:
+1. **Plan**: Clearly outline intended changes and their impact
+2. **Ask**: Get explicit approval before implementing any changes
+3. **Execute**: Only proceed with approved changes
+
+This prevents undisciplined behavior and ensures all actions are deliberate and approved.
+
+**Discipline Enforcement Methods:**
+1. **Constitution-First Prompts**: All agent prompts must reference constitution rules before any other instructions
+2. **Self-Validation Checks**: Agents must validate their responses against constitution principles before outputting
+3. **Feedback Correction**: When deviations detected, agents must self-correct or request human intervention
+4. **Architectural Constraints**: System design prevents undisciplined behavior through validation gates
+5. **Compliance Monitoring**: All agent actions logged and audited for constitution adherence
+
 ### Boss Mode First
 Business decisions from Boss, AI handles all technical complexity through coordinated agent teamwork.
 
