@@ -1,7 +1,7 @@
 # ForgeMind - AI-Driven Software Development System
 
-> **Version**: 0.2.0 (Complete Knowledge Integration)  
-> **Last Updated**: 2025-10-22 22:00 HKT  
+> **Version**: 0.2.1 (Updated Implementation Plan)
+> **Last Updated**: 2025-10-23 22:00 HKT
 > **Status**: 🚧 Phase 0 - Ready to Start  
 > **Project ID**: PROJ-FORGEMIND-001
 
@@ -1519,34 +1519,37 @@ Ask me 3-5 key questions to clarify the vision."
 
 ## 📊 關鍵指標
 
-### Phase 0指標
+### Phase 0: 驗證指標 (當前)
 - **時間**: 1個月
 - **成本**: $0
+- **焦點**: 驗證ForgeMind概念
 - **Agent數量**: 3-4個 (驗證)
 - **Clarity提升**: 10% → 40%
 - **Artifacts**: 10-15個
 - **成功率**: 待測試
 
-### Phase 1指標
+### Phase 1: MVP建置指標
 - **時間**: 2個月
 - **成本**: $80 total
+- **焦點**: 實現最小可行ForgeMind
 - **Agent數量**: 10個
 - **Clarity提升**: 40% → 70%
 - **Artifacts**: 30-40個
 - **成功率**: 目標80%
 
-### Phase 2指標
-- **時間**: 4個月
+### Phase 2: 功能擴展指標
+- **時間**: 3個月
 - **成本**: $960 total
+- **焦點**: 增加進階功能
 - **Agent數量**: 20個
 - **Clarity提升**: 70% → 90%
 - **Artifacts**: 60-80個
 - **成功率**: 目標90%
 
-### Phase 3指標
-- **時間**: 6-12個月
-- **初期投資**: $10K-30K
-- **月度成本**: $1K-3.5K
+### Phase 3: 生產使用指標
+- **時間**: 持續
+- **成本**: 按項目收費
+- **焦點**: 使用ForgeMind開發客戶項目
 - **Agent數量**: 68個 (完整)
 - **Clarity提升**: 90% → 95%+
 - **Artifacts**: 200+ (生產級)
@@ -1646,6 +1649,11 @@ Ask me 3-5 key questions to clarify the vision."
 ---
 
 ## 📝 版本歷史
+
+### v0.2.1 (2025-10-23) - Updated Implementation Plan
+- ✅ 更新實施計劃 (從工具驗證到ForgeMind建置)
+- ✅ 更新關鍵指標 (反映新4階段計劃)
+- ✅ 更新Agent目錄狀態 (已生成agents-catalog.md)
 
 ### v0.2.0 (2025-10-22) - Complete Knowledge Integration
 - ✅ 整合所有討論內容
@@ -1751,7 +1759,7 @@ Ask me 3-5 key questions to clarify the vision."
 
 ### A. 完整Agent目錄
 
-見 `.ai/docs/AGENT-CATALOG.md` (待生成)
+見 `.ai/docs/agents-catalog.md` (已生成)
 
 ### B. 完整Workflow說明
 
