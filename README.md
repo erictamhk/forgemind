@@ -1,7 +1,7 @@
 # ForgeMind Project
 
-> **Version**: v0.2.0  
-> **Phase**: 0 - Validation  
+> **Version**: v0.2.1
+> **Phase**: 0 - Validation
 > **Started**: 2025-10-23
 
 ## Quick Start
@@ -20,7 +20,8 @@
 
 ## Phase 0 Goals
 
-- [ ] 驗證Facilitator Agent
+- [x] 驗證Facilitator Agent (已完成第一個對話)
+- [ ] 測試Idea→Module流程
 - [ ] 驗證BA Agent
 - [ ] 驗證Architect Agent
 - [ ] 測試非線性回溯
