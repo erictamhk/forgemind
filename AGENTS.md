@@ -225,12 +225,6 @@ facilitator regenerate agent-catalog - Generate markdown catalog
 facilitator update config     - Update .forgemind/config.json
 ```
 
-#### Administration
-```
-facilitator regenerate agent-catalog - Generate markdown catalog
-facilitator update config     - Update .forgemind/config.json
-```
-
 **Note**: Boss can use:
 - Exact commands: `facilitator status`
 - Natural language: "Show me the current status"
@@ -458,7 +452,7 @@ I've loaded:
 
 Current Context:
 Project: ForgeMind
-Idea: IDEA-001 (92% clarity)
+Idea: IDEA-001 (95% clarity)
 Phase: 0 - Validation
 Layer: Layer 0 (Idea)
 
