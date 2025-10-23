@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Manage the complete 5-layer structure, maintain bidirectional traceability, and provide 3-second impact analysis. This module handles the "zero technical debt" and "non-linear development" capabilities.
+Manage the complete 5-layer structure, maintain bidirectional traceability, and provide 3-second impact analysis. This module handles the "zero technical debt" and "non-linear development" capabilities by tracking all artifacts created by AI agents and maintaining consistency across the development process.
 
 ## Key Responsibilities
 
@@ -19,22 +19,25 @@ Manage the complete 5-layer structure, maintain bidirectional traceability, and 
 ## Core Components
 
 ### Artifact Repository
-- Centralized storage for all 5-layer artifacts
-- Version management and history tracking
-- Metadata management and search capabilities
-- Artifact relationship mapping
+
+- Centralized storage for all 5-layer artifacts created by AI agents
+- Version management and history tracking for agent-generated content
+- Metadata management including agent source, creation context, and validation status
+- Artifact relationship mapping across layers and agent contributions
 
 ### Traceability Engine
-- Master traceability matrix maintenance
-- Bidirectional link management
-- Dependency graph generation
-- Impact propagation algorithms
+
+- Master traceability matrix maintenance linking agent actions to artifacts
+- Bidirectional link management between requirements, specs, and implementations
+- Dependency graph generation showing agent collaboration patterns
+- Impact propagation algorithms for changes initiated by agents
 
 ### Impact Analysis System
-- 3-second impact assessment for changes
-- Ripple effect analysis across layers
-- Change recommendation engine
-- Risk assessment and mitigation suggestions
+
+- 3-second impact assessment for changes proposed by AI agents
+- Ripple effect analysis across layers showing affected artifacts
+- Change recommendation engine considering agent capabilities
+- Risk assessment and mitigation suggestions for agent-initiated changes
 
 ### Version Control Integration
 - Git repository management
@@ -60,21 +63,41 @@ Manage the complete 5-layer structure, maintain bidirectional traceability, and 
 
 ## Technical Architecture
 
-### Package Structure
+### Folder Structure (Aligned with ForgeMind Structure)
 ```
-tw.forgemind.knowledge/
-├── artifacts/
-│   ├── repository/
-│   ├── versioning/
-│   └── metadata/
-├── traceability/
-│   ├── matrix/
-│   ├── links/
-│   └── graphs/
-└── analysis/
-    ├── impact/
-    ├── dependencies/
-    └── recommendations/
+.dev/current/
+├── ideas/
+│   ├── [IDEA-ID]/
+│   │   ├── current.md
+│   │   └── versions/
+├── modules/
+│   ├── [MODULE-ID]/
+│   │   ├── current.md
+│   │   └── versions/
+├── domains/
+│   ├── [DOMAIN-ID]/
+│   │   ├── current.md
+│   │   └── versions/
+├── requirements/
+│   └── [REQUIREMENT-ID]/
+└── specs/
+    └── [SPEC-ID]/
+.forgemind/
+├── knowledge/
+│   ├── artifacts/
+│   │   ├── repository/
+│   │   ├── versioning/
+│   │   └── metadata/
+│   ├── traceability/
+│   │   ├── matrix/
+│   │   ├── links/
+│   │   └── graphs/
+│   └── analysis/
+│       ├── impact/
+│       ├── dependencies/
+│       └── recommendations/
+└── exports/
+    └── [JSON exports]
 ```
 
 ### Key Interfaces
@@ -96,13 +119,21 @@ tw.forgemind.knowledge/
 - Layer 1 (Module): ✅ Defined
 - Ready for: Domain definition and artifact schema design
 
+## Agent Integration
+
+- Tracks which AI agents created/modified each artifact
+- Maintains agent accountability and contribution history
+- Provides context for agent decision-making and validation
+- Supports agent learning from past artifacts and decisions
+
 ## Next Steps
 
 1. Define DOMAIN-001: Artifact Management
 2. Define DOMAIN-002: Traceability System
 3. Define DOMAIN-003: Impact Analysis
-4. Design artifact storage schemas
+4. Design artifact storage schemas with agent metadata
 5. Implement traceability matrix algorithms
+6. Create agent contribution tracking system
 
 ## References
 

@@ -6,7 +6,11 @@
 
 ## Purpose
 
-Coordinate and manage the 68+ AI agents and sub-agents that execute all technical work in ForgeMind. This is the core orchestration layer that enables the "AI agents do all the work" vision.
+Coordinate and manage the 68+ AI agents and sub-agents that execute all technical work in ForgeMind. Each AI agent is a specialized AI assistant with a specific role, detailed prompt, and capabilities. This orchestration enables the "AI agents do all the work" vision by managing agent lifecycles, task delegation, and inter-agent communication.
+
+**Two-Tier Agent System**:
+- **ForgeMind System Agents**: Core agents (Facilitator, BA, Architect, QA, etc.) that manage the development process
+- **Project-Specific Agents**: Domain experts dynamically generated per project (HR agents for HRMS, manufacturing agents for MRP, etc.)
 
 ## Key Responsibilities
 
@@ -19,24 +23,32 @@ Coordinate and manage the 68+ AI agents and sub-agents that execute all technica
 ## Core Components
 
 ### Agent Registry
+
 - Maintain catalog of all 68+ agents and their capabilities
 - Agent metadata management (prompts, expertise areas, dependencies)
 - Dynamic agent discovery and registration
 
 ### Workflow Engine
-- Define and execute multi-step agent workflows
-- Handle parallel and sequential agent execution
-- Workflow state persistence and recovery
+
+- Define and execute multi-step agent workflows using both system and project agents
+- Handle parallel and sequential agent execution across the 3 agent levels
+- Dynamic workflow adaptation when project agents are spawned
+- Workflow state persistence and recovery for interrupted sessions
+- Task delegation based on agent expertise and prompt-defined roles
 
 ### Communication Bus
-- Standardized messaging protocol between agents
-- Context sharing and data transfer
-- Event-driven architecture for agent interactions
+
+- Standardized messaging protocol between agents for seamless collaboration
+- Context sharing and data transfer across agent sessions
+- Event-driven architecture for agent interactions and handoffs
+- Integration with Boss (human) communication channels
 
 ### Orchestration Logic
-- Decision algorithms for task-agent matching
-- Load balancing across available agents
-- Priority and dependency management
+
+- Decision algorithms for task-agent matching based on agent prompts and expertise
+- Load balancing across available agents (considering prompt complexity)
+- Priority and dependency management for multi-agent workflows
+- Agent selection based on role definitions and current context
 
 ## Domains
 
@@ -56,10 +68,20 @@ Coordinate and manage the 68+ AI agents and sub-agents that execute all technica
 
 ## Technical Architecture
 
-### Package Structure
+### Folder Structure (Aligned with ForgeMind Structure)
+
 ```
-tw.forgemind.orchestration/
-├── agent/
+.ai/agents/
+├── prompts/
+│   ├── level-1-executive/
+│   │   └── facilitator-agent.md
+│   ├── level-2-department/
+│   │   ├── ba-agent.md
+│   │   ├── architect-agent.md
+│   │   └── [other agents]
+│   └── level-3-subagents/
+│       └── [sub-agent prompts]
+├── orchestration/
 │   ├── registry/
 │   ├── coordinator/
 │   └── executor/
@@ -74,6 +96,7 @@ tw.forgemind.orchestration/
 ```
 
 ### Key Interfaces
+
 - `AgentCoordinator`: Main orchestration interface
 - `WorkflowExecutor`: Workflow execution engine
 - `AgentRegistry`: Agent catalog management
@@ -92,6 +115,24 @@ tw.forgemind.orchestration/
 - Layer 1 (Module): ✅ Defined
 - Ready for: Domain definition and implementation planning
 
+## Agent Creation Process
+
+### System Agent Creation (ForgeMind Core)
+To create a new ForgeMind system agent:
+1. Define agent role and expertise area
+2. Write detailed prompt with commands, principles, and capabilities
+3. Save prompt in appropriate level folder (`.ai/agents/prompts/level-X/`)
+4. Register agent in orchestration system
+5. Test agent integration and workflows
+
+### Project Agent Generation (Domain Experts)
+To generate project-specific domain experts:
+1. Analyze project domain and requirements
+2. Identify needed expertise areas (HR, manufacturing, finance, etc.)
+3. Generate specialized prompts based on domain knowledge
+4. Spawn agents with project-specific context
+5. Integrate into project workflows
+
 ## Next Steps
 
 1. Define DOMAIN-001: Agent Coordination
@@ -99,11 +140,10 @@ tw.forgemind.orchestration/
 3. Define DOMAIN-003: Communication Protocols
 4. Create initial agent registry structure
 5. Design workflow execution engine
+6. Implement agent prompt validation and loading
 
 ## References
 
 - Parent Idea: `IDEA-001`
 - Agent Catalog: `.ai/docs/agents-catalog.md`
-- Orchestration Patterns: Research materials</content>
-</xai:function_call ><xai:function_call name="write">
-<parameter name="filePath">.dev/current/modules/MODULE-002-knowledge-artifact-management/current.md
+- Orchestration Patterns: Research materials

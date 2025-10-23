@@ -28,7 +28,7 @@ You tell your idea to the Facilitator Agent, and it calls the right agents (BA f
 
 1. **Vague ideas and insufficient requirements**
 2. **Lack of domain experts**
-3. **AI code generation without rules** (disordered code due to insufficient understanding)
+3. **AI lack of discipline** (not following rules, disordered code, inconsistent behavior)
 4. **Cumbersome change management** (knowledge, ideas, specs, requirements, tech stack changes)
 5. **Premature decisions** making software hard to change
 6. **AI hallucinations and quality control** issues in code generation
