@@ -1,0 +1,2137 @@
+{
+  "$schema": "https://forgemind.dev/schemas/agents-catalog.v1.json",
+  "version": "1.0.0",
+  "last_updated": "2025-10-23T14:24:00+08:00",
+  "total_agents": 68,
+  "implemented": 1,
+  "in_development": 0,
+  "planned": 67,
+
+  "metadata": {
+    "description": "Complete catalog of all ForgeMind AI Agents",
+    "single_source_of_truth": true,
+    "generated_markdown": "AGENTS-CATALOG.md",
+    "versioning": {
+      "policy": "Archive old versions when updated",
+      "archive_location": ".ai/docs/archive/",
+      "naming_convention": "{filename}-v{X}.{Y}.{format}"
+    }
+  },
+
+  "agents": [
+    {
+      "id": "L1-EXEC-001",
+      "name": "Facilitator Agent",
+      "level": 1,
+      "category": "Executive",
+      "version": "1.0.0",
+      "status": "implemented",
+      "priority": "P0",
+      "phase": 0,
+      "function_tags": ["management", "boss_mode", "coordination"],
+      "applicable_layers": [0, 1, 2, 3, 4],
+
+      "description": "Primary interface for Boss. Guides through 5-layer structure, asks structured questions, tracks clarity, maintains documentation, coordinates other agents.",
+
+      "responsibilities": [
+        "Guide Boss through 5-layer structure",
+        "Ask structured clarifying questions (Clarify phase)",
+        "Track Clarity Level progression",
+        "Maintain project documentation",
+        "Execute Boss commands",
+        "Coordinate with other agents",
+        "Update .forgemind/config.json"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-1-executive/facilitator-agent.md",
+        "version": "1.0.0",
+        "size_kb": 25,
+        "archive_folder": ".ai/agents/prompts/level-1-executive/archive/"
+      },
+
+      "commands": [
+        "facilitator clarify",
+        "facilitator status",
+        "facilitator help",
+        "facilitator update idea",
+        "facilitator new version",
+        "facilitator new idea",
+        "facilitator git commit",
+        "facilitator update todo",
+        "facilitator switch {ID}",
+        "facilitator list ideas",
+        "facilitator analyze",
+        "facilitator suggest",
+        "facilitator fill learning log"
+      ],
+
+      "when_to_call": "Auto-initialized when AI tool starts. Boss's default agent.",
+
+      "relationships": {
+        "calls": ["L2-REQ-001", "L2-ARCH-001", "L2-DOM-001"],
+        "called_by": ["Boss"],
+        "coordinates_with": ["All Level 2 agents"]
+      },
+
+      "reference_docs": [".ai/docs/facilitator-agent-guide.md", "AGENTS.md"],
+
+      "notes": "Core of Boss Mode. Auto-initialized via AGENTS.md."
+    },
+
+    {
+      "id": "L1-EXEC-002",
+      "name": "Product Owner Agent",
+      "level": 1,
+      "category": "Executive",
+      "version": "0.0.0",
+      "status": "planned",
+      "priority": "P1",
+      "phase": 1,
+      "function_tags": ["management", "product", "backlog"],
+      "applicable_layers": [0, 1, 2],
+
+      "description": "Manages product vision, backlog prioritization, stakeholder communication. Ensures alignment with business goals.",
+
+      "responsibilities": [
+        "Maintain product vision",
+        "Prioritize backlog items",
+        "Define acceptance criteria",
+        "Communicate with stakeholders",
+        "Validate business value",
+        "Make scope decisions"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-1-executive/product-owner-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-1-executive/archive/"
+      },
+
+      "when_to_call": "When Boss needs help with product decisions, backlog management, or business validation.",
+
+      "relationships": {
+        "calls": ["L2-REQ-001", "L2-REQ-002"],
+        "called_by": ["L1-EXEC-001"],
+        "coordinates_with": ["L1-EXEC-003", "L2-REQ-001"]
+      },
+
+      "planned_implementation": "Phase 1 Week 2-3"
+    },
+
+    {
+      "id": "L1-EXEC-003",
+      "name": "Scrum Master Agent",
+      "level": 1,
+      "category": "Executive",
+      "version": "0.0.0",
+      "status": "planned",
+      "priority": "P1",
+      "phase": 1,
+      "function_tags": ["management", "process", "team"],
+      "applicable_layers": [0, 1, 2, 3, 4],
+
+      "description": "Facilitates development process, removes blockers, tracks progress, ensures adherence to ForgeMind methodology.",
+
+      "responsibilities": [
+        "Track Sprint/Phase progress",
+        "Identify and resolve blockers",
+        "Facilitate ceremonies (planning, review, retrospective)",
+        "Ensure process adherence",
+        "Generate progress reports",
+        "Manage velocity and capacity"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-1-executive/scrum-master-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-1-executive/archive/"
+      },
+
+      "when_to_call": "For process management, progress tracking, blocker resolution.",
+
+      "relationships": {
+        "calls": ["L2-QA-001", "L3-TRACK-001"],
+        "called_by": ["L1-EXEC-001"],
+        "coordinates_with": ["L1-EXEC-002", "L1-EXEC-004"]
+      },
+
+      "planned_implementation": "Phase 1 Week 3-4"
+    },
+
+    {
+      "id": "L1-EXEC-004",
+      "name": "QA Manager Agent",
+      "level": 1,
+      "category": "Executive",
+      "version": "0.0.0",
+      "status": "planned",
+      "priority": "P1",
+      "phase": 1,
+      "function_tags": ["management", "quality", "testing"],
+      "applicable_layers": [3, 4],
+
+      "description": "Oversees quality assurance strategy, test coverage, quality gates, release readiness.",
+
+      "responsibilities": [
+        "Define quality strategy",
+        "Set quality gates",
+        "Monitor test coverage",
+        "Assess release readiness",
+        "Manage QA sub-agents",
+        "Report quality metrics"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-1-executive/qa-manager-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-1-executive/archive/"
+      },
+
+      "when_to_call": "For quality strategy, release decisions, test planning.",
+
+      "relationships": {
+        "calls": ["L2-QA-002", "L2-QA-003", "L2-QA-004"],
+        "called_by": ["L1-EXEC-001"],
+        "coordinates_with": ["L1-EXEC-003", "L2-ARCH-001"]
+      },
+
+      "planned_implementation": "Phase 1 Week 4"
+    },
+
+    {
+      "id": "L2-REQ-001",
+      "name": "BA (Business Analyst) Agent",
+      "level": 2,
+      "category": "Requirements",
+      "version": "0.0.0",
+      "status": "planned",
+      "priority": "P0",
+      "phase": 0,
+      "function_tags": ["requirements", "analysis", "clarification"],
+      "applicable_layers": [0, 1, 2, 3],
+
+      "description": "Collects and analyzes business requirements, creates EARS notation requirements, identifies use cases.",
+
+      "responsibilities": [
+        "Conduct requirements discovery",
+        "Write EARS format requirements",
+        "Identify use cases and scenarios",
+        "Create requirement specifications",
+        "Validate requirements with Boss",
+        "Maintain requirements traceability"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-2-departments/ba-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-2-departments/archive/"
+      },
+
+      "when_to_call": "When moving from Idea/Module to detailed Requirements. Called by Facilitator when Boss wants to define requirements.",
+
+      "relationships": {
+        "calls": ["L2-REQ-002", "L3-CLARIFY-001"],
+        "called_by": ["L1-EXEC-001", "L1-EXEC-002"],
+        "coordinates_with": ["L2-ARCH-001", "L2-DOM-001"]
+      },
+
+      "planned_implementation": "Phase 0 Week 2"
+    },
+
+    {
+      "id": "L2-ARCH-001",
+      "name": "Architect Agent",
+      "level": 2,
+      "category": "Architecture",
+      "version": "0.0.0",
+      "status": "planned",
+      "priority": "P0",
+      "phase": 0,
+      "function_tags": ["architecture", "design", "technical"],
+      "applicable_layers": [1, 2, 4],
+
+      "description": "Designs system architecture, module structure, technology decisions, ensures architectural principles.",
+
+      "responsibilities": [
+        "Design module structure",
+        "Define technical architecture",
+        "Make technology stack decisions",
+        "Ensure architectural patterns adherence",
+        "Create dependency diagrams",
+        "Guide implementation approach"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-2-departments/architect-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-2-departments/archive/"
+      },
+
+      "when_to_call": "When designing Module structure (Layer 1) or making architectural decisions.",
+
+      "relationships": {
+        "calls": ["L2-ARCH-002", "L2-ARCH-003", "L3-DESIGN-001"],
+        "called_by": ["L1-EXEC-001", "L1-EXEC-002"],
+        "coordinates_with": ["L2-REQ-001", "L2-DOM-001"]
+      },
+
+      "planned_implementation": "Phase 0 Week 2"
+    },
+
+    {
+      "id": "L2-REQ-002",
+      "name": "Requirements Engineer Agent",
+      "level": 2,
+      "category": "Requirements",
+      "version": "0.0.0",
+      "status": "planned",
+      "priority": "P0",
+      "phase": 0,
+      "function_tags": ["requirements", "specification", "validation"],
+      "applicable_layers": [3],
+
+      "description": "Writes formal requirements specifications, validates completeness, manages requirement changes.",
+
+      "responsibilities": [
+        "Write formal requirement specs",
+        "Validate requirement completeness",
+        "Manage requirement changes",
+        "Ensure EARS notation compliance",
+        "Create requirement acceptance tests",
+        "Maintain requirement versions"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-2-departments/requirements-engineer-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-2-departments/archive/"
+      },
+
+      "when_to_call": "When writing Layer 3 (Requirement) specifications.",
+
+      "relationships": {
+        "calls": ["L3-VALIDATE-001", "L3-TRACE-001"],
+        "called_by": ["L2-REQ-001"],
+        "coordinates_with": ["L2-QA-001"]
+      },
+
+      "planned_implementation": "Phase 0 Week 3"
+    },
+
+    {
+      "id": "L2-QA-001",
+      "name": "QA Agent",
+      "level": 2,
+      "category": "Quality Assurance",
+      "version": "0.0.0",
+      "status": "planned",
+      "priority": "P0",
+      "phase": 0,
+      "function_tags": ["quality", "testing", "validation"],
+      "applicable_layers": [3, 4],
+
+      "description": "Validates requirements testability, creates test strategies, ensures quality standards.",
+
+      "responsibilities": [
+        "Validate requirements are testable",
+        "Create test strategies",
+        "Define test scenarios",
+        "Ensure quality standards",
+        "Review specifications for testability",
+        "Create acceptance criteria"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-2-departments/qa-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-2-departments/archive/"
+      },
+
+      "when_to_call": "When validating requirements or creating test strategies.",
+
+      "relationships": {
+        "calls": ["L3-TEST-001", "L3-VALIDATE-001"],
+        "called_by": ["L1-EXEC-004", "L2-REQ-002"],
+        "coordinates_with": ["L2-REQ-002", "L2-SPEC-001"]
+      },
+
+      "planned_implementation": "Phase 0 Week 3"
+    },
+
+    {
+      "id": "L2-DOM-001",
+      "name": "Domain Expert Agent",
+      "level": 2,
+      "category": "Domain Modeling",
+      "version": "0.0.0",
+      "status": "planned",
+      "priority": "P1",
+      "phase": 1,
+      "function_tags": ["domain", "ddd", "modeling"],
+      "applicable_layers": [2],
+
+      "description": "Applies DDD principles, identifies bounded contexts, designs domain models, ensures ubiquitous language.",
+
+      "responsibilities": [
+        "Identify bounded contexts (Domains)",
+        "Design domain models",
+        "Define ubiquitous language",
+        "Apply DDD strategic patterns",
+        "Model aggregates and entities",
+        "Define domain events"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-2-departments/domain-expert-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-2-departments/archive/"
+      },
+
+      "when_to_call": "When designing Layer 2 (Domain) or applying DDD.",
+
+      "relationships": {
+        "calls": ["L3-DOMAIN-001", "L3-DOMAIN-002"],
+        "called_by": ["L2-ARCH-001"],
+        "coordinates_with": ["L2-REQ-001", "L2-ARCH-001"]
+      },
+
+      "planned_implementation": "Phase 1 Week 1"
+    },
+
+    {
+      "id": "L2-SPEC-001",
+      "name": "Specification Writer Agent",
+      "level": 2,
+      "category": "Specification",
+      "version": "0.0.0",
+      "status": "planned",
+      "priority": "P1",
+      "phase": 1,
+      "function_tags": ["specification", "ezspec", "executable"],
+      "applicable_layers": [4],
+
+      "description": "Writes executable specifications (ezSpec format), ensures machine-readable format, validates spec completeness.",
+
+      "responsibilities": [
+        "Write ezSpec format specifications",
+        "Generate JSON specifications",
+        "Ensure spec executability",
+        "Validate spec completeness",
+        "Create test scenarios from specs",
+        "Maintain spec versions"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-2-departments/specification-writer-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-2-departments/archive/"
+      },
+
+      "when_to_call": "When writing Layer 4 (Specification) executable specs.",
+
+      "relationships": {
+        "calls": ["L3-SPEC-001", "L3-VALIDATE-002"],
+        "called_by": ["L2-REQ-002"],
+        "coordinates_with": ["L2-QA-001", "L3-CODE-GEN-001"]
+      },
+
+      "planned_implementation": "Phase 1 Week 2"
+    },
+
+    {
+      "id": "L3-IMPACT-001",
+      "name": "Impact Analysis Agent",
+      "level": 3,
+      "category": "Analysis",
+      "version": "0.0.0",
+      "status": "planned",
+      "priority": "P0",
+      "phase": 0,
+      "function_tags": ["analysis", "impact", "traceability"],
+      "applicable_layers": [0, 1, 2, 3, 4],
+
+      "description": "Performs 3-second impact analysis when changes occur. Identifies affected items across all layers.",
+
+      "responsibilities": [
+        "Analyze impact of changes",
+        "Identify affected items (3 seconds)",
+        "Generate impact reports",
+        "Update traceability matrix",
+        "Calculate change propagation",
+        "Suggest mitigation strategies"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-3-subagents/impact-analysis-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-3-subagents/archive/"
+      },
+
+      "when_to_call": "Whenever Boss wants to change anything. Facilitator calls this before applying changes.",
+
+      "relationships": {
+        "calls": ["L3-TRACE-001"],
+        "called_by": ["L1-EXEC-001", "All Level 2 agents"],
+        "coordinates_with": ["L3-TRACE-001", "L3-VALIDATE-001"]
+      },
+
+      "planned_implementation": "Phase 0 Week 4"
+    },
+
+    {
+      "id": "L3-TRACE-001",
+      "name": "Traceability Agent",
+      "level": 3,
+      "category": "Traceability",
+      "version": "0.0.0",
+      "status": "planned",
+      "priority": "P0",
+      "phase": 0,
+      "function_tags": ["traceability", "tracking", "matrix"],
+      "applicable_layers": [0, 1, 2, 3, 4],
+
+      "description": "Maintains bidirectional traceability matrix. Tracks relationships between all layers.",
+
+      "responsibilities": [
+        "Maintain traceability matrix",
+        "Track Idea → Module → Domain → Req → Spec relationships",
+        "Enable bidirectional tracing",
+        "Generate traceability reports",
+        "Validate trace completeness",
+        "Update trace on changes"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-3-subagents/traceability-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-3-subagents/archive/"
+      },
+
+      "when_to_call": "Continuously. Auto-updates when any layer changes.",
+
+      "relationships": {
+        "calls": [],
+        "called_by": ["L3-IMPACT-001", "L1-EXEC-001"],
+        "coordinates_with": ["L3-IMPACT-001"]
+      },
+
+      "planned_implementation": "Phase 0 Week 4"
+    },
+
+    {
+      "id": "L3-CODE-GEN-001",
+      "name": "Command Code Generation Sub-agent",
+      "level": 3,
+      "category": "Code Generation",
+      "version": "1.0.0",
+      "status": "from_repository",
+      "priority": "P2",
+      "phase": 2,
+      "function_tags": ["code_generation", "command", "backend"],
+      "applicable_layers": [4],
+      "source": "Repository SUB-AGENT-SYSTEM.md",
+
+      "description": "Generates Command use case production code (Create/Update/Delete). Handles aggregate state changes, domain events, repository save operations.",
+
+      "responsibilities": [
+        "Generate Command use case code",
+        "Implement aggregate state changes",
+        "Generate domain events",
+        "Handle repository save operations",
+        "Implement transaction management",
+        "Enforce business rules",
+        "Architecture-aware: Outbox/InMemory/EventSourcing"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-3-subagents/command-code-gen-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-3-subagents/archive/",
+        "repository_source": ".ai/prompts/command-sub-agent-prompt.md"
+      },
+
+      "when_to_call": "When generating code for Create/Update/Delete/State-Change operations.",
+
+      "relationships": {
+        "calls": ["L3-CODE-REV-001"],
+        "called_by": ["L2-SPEC-001"],
+        "coordinates_with": ["L3-TEST-GEN-001", "L3-CODE-GEN-002"]
+      },
+
+      "planned_implementation": "Phase 2 Week 1",
+      "notes": "From Repository. Needs ForgeMind integration."
+    },
+
+    {
+      "id": "L3-CODE-GEN-002",
+      "name": "Query Code Generation Sub-agent",
+      "level": 3,
+      "category": "Code Generation",
+      "version": "1.0.0",
+      "status": "from_repository",
+      "priority": "P2",
+      "phase": 2,
+      "function_tags": ["code_generation", "query", "backend"],
+      "applicable_layers": [4],
+      "source": "Repository SUB-AGENT-SYSTEM.md",
+
+      "description": "Generates Query use case production code (Get/List/Search). Handles projections, DTOs, read models.",
+
+      "responsibilities": [
+        "Generate Query use case code",
+        "Design and implement projections",
+        "Create DTO mappings",
+        "Implement query optimization",
+        "Design read models",
+        "Ensure no side effects"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-3-subagents/query-code-gen-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-3-subagents/archive/",
+        "repository_source": ".ai/prompts/query-sub-agent-prompt.md"
+      },
+
+      "when_to_call": "When generating code for Get/List/Search operations.",
+
+      "relationships": {
+        "calls": ["L3-CODE-REV-001"],
+        "called_by": ["L2-SPEC-001"],
+        "coordinates_with": ["L3-TEST-GEN-001", "L3-CODE-GEN-001"]
+      },
+
+      "planned_implementation": "Phase 2 Week 1",
+      "notes": "From Repository. Needs ForgeMind integration."
+    },
+
+    {
+      "id": "L3-TEST-GEN-001",
+      "name": "Test Generation Sub-agent",
+      "level": 3,
+      "category": "Testing",
+      "version": "1.0.0",
+      "status": "from_repository",
+      "priority": "P2",
+      "phase": 2,
+      "function_tags": ["testing", "test_generation", "bdd"],
+      "applicable_layers": [4],
+      "source": "Repository SUB-AGENT-SYSTEM.md",
+
+      "description": "Generates test code (ezSpec BDD tests, unit tests). Prepares test data.",
+
+      "responsibilities": [
+        "Generate ezSpec BDD tests",
+        "Generate unit tests for domain objects",
+        "Prepare test data",
+        "Generate test scenarios from specs",
+        "Ensure test coverage",
+        "Create test fixtures"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-3-subagents/test-generation-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-3-subagents/archive/",
+        "repository_source": ".ai/prompts/test-generation-prompt.md"
+      },
+
+      "when_to_call": "After code generation, to create tests.",
+
+      "relationships": {
+        "calls": ["L3-TEST-MUT-001"],
+        "called_by": ["L3-CODE-GEN-001", "L3-CODE-GEN-002"],
+        "coordinates_with": ["L2-QA-001"]
+      },
+
+      "planned_implementation": "Phase 2 Week 1",
+      "notes": "From Repository. Needs ForgeMind integration."
+    },
+
+    {
+      "id": "L3-CODE-REV-001",
+      "name": "Code Review Sub-agent",
+      "level": 3,
+      "category": "Quality",
+      "version": "1.0.0",
+      "status": "from_repository",
+      "priority": "P2",
+      "phase": 2,
+      "function_tags": ["quality", "review", "validation"],
+      "applicable_layers": [4],
+      "source": "Repository SUB-AGENT-SYSTEM.md",
+
+      "description": "Reviews generated code for compliance, quality, and best practices.",
+
+      "responsibilities": [
+        "Check coding standards compliance",
+        "Identify quality issues",
+        "Provide improvement suggestions",
+        "Validate architectural patterns",
+        "Check for anti-patterns",
+        "Generate review reports"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-3-subagents/code-review-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-3-subagents/archive/",
+        "repository_source": ".ai/prompts/code-review-prompt.md"
+      },
+
+      "when_to_call": "After code and test generation, before delivery.",
+
+      "relationships": {
+        "calls": [],
+        "called_by": ["L3-CODE-GEN-001", "L3-CODE-GEN-002"],
+        "coordinates_with": ["L2-QA-001", "L2-ARCH-001"]
+      },
+
+      "planned_implementation": "Phase 2 Week 1",
+      "notes": "From Repository. Needs ForgeMind integration."
+    },
+
+    {
+      "id": "L3-TEST-MUT-001",
+      "name": "Mutation Testing Enhancement Sub-agent",
+      "level": 3,
+      "category": "Testing",
+      "version": "1.0.0",
+      "status": "from_repository",
+      "priority": "P2",
+      "phase": 2,
+      "function_tags": ["testing", "mutation", "quality"],
+      "applicable_layers": [4],
+      "source": "Repository SUB-AGENT-SYSTEM.md",
+
+      "description": "Uses PIT + uContract + assertion-free tests to boost mutation coverage.",
+
+      "responsibilities": [
+        "Configure PIT mutation testing",
+        "Implement Design by Contract (uContract)",
+        "Design assertion-free tests",
+        "Analyze mutation coverage",
+        "Improve test effectiveness",
+        "Maintain backward compatibility"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-3-subagents/mutation-testing-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-3-subagents/archive/",
+        "repository_source": ".ai/prompts/mutation-testing-sub-agent-prompt.md"
+      },
+
+      "success_metrics": {
+        "mutation_coverage": ">80%",
+        "test_strength": ">85%",
+        "existing_tests_pass": "100%"
+      },
+
+      "when_to_call": "When improving test quality and coverage.",
+
+      "relationships": {
+        "calls": [],
+        "called_by": ["L3-TEST-GEN-001", "L2-QA-001"],
+        "coordinates_with": ["L3-TEST-GEN-001"]
+      },
+
+      "planned_implementation": "Phase 2 Week 2",
+      "notes": "From Repository. Advanced testing technique."
+    },
+
+    {
+      "id": "L3-CODE-GEN-003",
+      "name": "Controller Code Generation Sub-agent",
+      "level": 3,
+      "category": "Code Generation",
+      "version": "1.0.0",
+      "status": "from_repository",
+      "priority": "P2",
+      "phase": 2,
+      "function_tags": ["code_generation", "controller", "rest_api"],
+      "applicable_layers": [4],
+      "source": "Repository SUB-AGENT-SYSTEM.md",
+
+      "description": "Generates REST Controller code. Handles endpoints, request/response mapping, error handling.",
+
+      "responsibilities": [
+        "Generate REST API endpoints",
+        "Implement request/response mapping",
+        "Handle HTTP status codes",
+        "Apply Spring Boot annotations",
+        "Implement error responses (ApiError)",
+        "Ensure REST API compliance"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-3-subagents/controller-code-gen-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-3-subagents/archive/",
+        "repository_source": ".ai/prompts/controller-code-generation-prompt.md"
+      },
+
+      "when_to_call": "When implementing REST API layer.",
+
+      "relationships": {
+        "calls": ["L3-TEST-GEN-002"],
+        "called_by": ["L2-SPEC-001"],
+        "coordinates_with": ["L3-CODE-REV-002"]
+      },
+
+      "planned_implementation": "Phase 2 Week 2",
+      "notes": "From Repository."
+    },
+
+    {
+      "id": "L3-TEST-GEN-002",
+      "name": "Controller Test Generation Sub-agent",
+      "level": 3,
+      "category": "Testing",
+      "version": "1.0.0",
+      "status": "from_repository",
+      "priority": "P2",
+      "phase": 2,
+      "function_tags": ["testing", "controller", "rest_api"],
+      "applicable_layers": [4],
+      "source": "Repository SUB-AGENT-SYSTEM.md",
+
+      "description": "Generates Controller test code. Creates MockMvc and REST Assured tests. Ensures all tests pass.",
+
+      "responsibilities": [
+        "Generate MockMvc tests (must pass)",
+        "Generate REST Assured integration tests (must pass)",
+        "Verify HTTP behavior",
+        "Validate JSON responses",
+        "Execute tests and verify passing",
+        "Cover all scenarios"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-3-subagents/controller-test-gen-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-3-subagents/archive/",
+        "repository_source": ".ai/prompts/controller-test-generation-prompt.md"
+      },
+
+      "when_to_call": "After controller code generation.",
+
+      "relationships": {
+        "calls": [],
+        "called_by": ["L3-CODE-GEN-003"],
+        "coordinates_with": ["L3-CODE-REV-002"]
+      },
+
+      "planned_implementation": "Phase 2 Week 2",
+      "notes": "From Repository. Must ensure all tests pass."
+    },
+
+    {
+      "id": "L3-CODE-REV-002",
+      "name": "Controller Code Review Sub-agent",
+      "level": 3,
+      "category": "Quality",
+      "version": "1.0.0",
+      "status": "from_repository",
+      "priority": "P2",
+      "phase": 2,
+      "function_tags": ["quality", "review", "rest_api"],
+      "applicable_layers": [4],
+      "source": "Repository SUB-AGENT-SYSTEM.md",
+
+      "description": "Reviews Controller implementation quality. Checks REST compliance, Spring Boot standards, security.",
+
+      "responsibilities": [
+        "Check REST API compliance",
+        "Verify Spring Boot standards",
+        "Perform security checks",
+        "Validate API design patterns",
+        "Ensure error handling completeness",
+        "Check both test types exist and pass"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-3-subagents/controller-code-review-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-3-subagents/archive/",
+        "repository_source": ".ai/prompts/controller-code-review-prompt.md"
+      },
+
+      "when_to_call": "After controller code and test generation.",
+
+      "relationships": {
+        "calls": [],
+        "called_by": ["L3-CODE-GEN-003"],
+        "coordinates_with": ["L3-TEST-GEN-002"]
+      },
+
+      "planned_implementation": "Phase 2 Week 2",
+      "notes": "From Repository."
+    },
+
+    {
+      "id": "L3-CODE-GEN-004",
+      "name": "Aggregate Code Generation Sub-agent",
+      "level": 3,
+      "category": "Code Generation",
+      "version": "1.0.0",
+      "status": "from_repository",
+      "priority": "P2",
+      "phase": 2,
+      "function_tags": ["code_generation", "aggregate", "ddd"],
+      "applicable_layers": [4],
+      "source": "Repository SUB-AGENT-SYSTEM.md",
+
+      "description": "Generates DDD Aggregate domain model code. Implements state machines, domain events, invariants.",
+
+      "responsibilities": [
+        "Design and implement state machines",
+        "Generate and handle domain events",
+        "Maintain invariants",
+        "Implement Event Sourcing",
+        "Encapsulate business rules",
+        "Handle boundary conditions"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-3-subagents/aggregate-code-gen-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-3-subagents/archive/",
+        "repository_source": ".ai/prompts/aggregate-sub-agent-prompt.md"
+      },
+
+      "when_to_call": "When implementing Aggregate domain logic.",
+
+      "relationships": {
+        "calls": ["L3-TEST-GEN-003"],
+        "called_by": ["L2-DOM-001"],
+        "coordinates_with": ["L3-CODE-REV-003"]
+      },
+
+      "planned_implementation": "Phase 2 Week 3",
+      "notes": "From Repository. Core DDD implementation."
+    },
+
+    {
+      "id": "L3-TEST-GEN-003",
+      "name": "Aggregate Test Generation Sub-agent",
+      "level": 3,
+      "category": "Testing",
+      "version": "1.0.0",
+      "status": "from_repository",
+      "priority": "P2",
+      "phase": 2,
+      "function_tags": ["testing", "aggregate", "ddd"],
+      "applicable_layers": [4],
+      "source": "Repository SUB-AGENT-SYSTEM.md",
+
+      "description": "Generates Aggregate test code. Tests state transitions, boundary conditions, invariants.",
+
+      "responsibilities": [
+        "Generate state transition tests",
+        "Test boundary conditions",
+        "Verify invariants",
+        "Test event sequences",
+        "Implement Given-When-Then tests",
+        "Ensure aggregate behavior correctness"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-3-subagents/aggregate-test-gen-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-3-subagents/archive/",
+        "repository_source": ".ai/prompts/aggregate-test-generation-prompt.md"
+      },
+
+      "when_to_call": "After aggregate code generation.",
+
+      "relationships": {
+        "calls": [],
+        "called_by": ["L3-CODE-GEN-004"],
+        "coordinates_with": ["L3-CODE-REV-003"]
+      },
+
+      "planned_implementation": "Phase 2 Week 3",
+      "notes": "From Repository."
+    },
+
+    {
+      "id": "L3-CODE-REV-003",
+      "name": "Aggregate Code Review Sub-agent",
+      "level": 3,
+      "category": "Quality",
+      "version": "1.0.0",
+      "status": "from_repository",
+      "priority": "P2",
+      "phase": 2,
+      "function_tags": ["quality", "review", "ddd"],
+      "applicable_layers": [4],
+      "source": "Repository SUB-AGENT-SYSTEM.md",
+
+      "description": "Reviews Aggregate implementation quality. Checks DDD principles, Event Sourcing, state machine completeness.",
+
+      "responsibilities": [
+        "Check DDD principles adherence",
+        "Verify Event Sourcing correctness",
+        "Validate state machine completeness",
+        "Ensure invariants are maintained",
+        "Check business rule correctness",
+        "Review domain event handling"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-3-subagents/aggregate-code-review-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-3-subagents/archive/",
+        "repository_source": ".ai/prompts/aggregate-code-review-prompt.md"
+      },
+
+      "when_to_call": "After aggregate code and test generation.",
+
+      "relationships": {
+        "calls": [],
+        "called_by": ["L3-CODE-GEN-004"],
+        "coordinates_with": ["L3-TEST-GEN-003"]
+      },
+
+      "planned_implementation": "Phase 2 Week 3",
+      "notes": "From Repository."
+    },
+
+    {
+      "id": "L3-CODE-GEN-005",
+      "name": "Reactor Code Generation Sub-agent",
+      "level": 3,
+      "category": "Code Generation",
+      "version": "1.0.0",
+      "status": "from_repository",
+      "priority": "P2",
+      "phase": 2,
+      "function_tags": ["code_generation", "reactor", "event_driven"],
+      "applicable_layers": [4],
+      "source": "Repository SUB-AGENT-SYSTEM.md",
+
+      "description": "Generates Reactor implementation code. Handles cross-aggregate eventual consistency via event handling.",
+
+      "responsibilities": [
+        "Implement execute(Object event) method",
+        "Handle event type checking (instanceof)",
+        "Implement cross-aggregate consistency logic",
+        "Integrate with MessageBus",
+        "Ensure error isolation",
+        "Implement graceful degradation"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-3-subagents/reactor-code-gen-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-3-subagents/archive/",
+        "repository_source": ".ai/prompts/reactor-sub-agent-prompt.md"
+      },
+
+      "when_to_call": "When implementing cross-aggregate event handling or read model projections (CQRS).",
+
+      "relationships": {
+        "calls": ["L3-TEST-GEN-004"],
+        "called_by": ["L2-DOM-001"],
+        "coordinates_with": ["L3-CODE-REV-004"]
+      },
+
+      "planned_implementation": "Phase 2 Week 3",
+      "notes": "From Repository. Event-driven architecture."
+    },
+
+    {
+      "id": "L3-TEST-GEN-004",
+      "name": "Reactor Test Generation Sub-agent",
+      "level": 3,
+      "category": "Testing",
+      "version": "1.0.0",
+      "status": "from_repository",
+      "priority": "P2",
+      "phase": 2,
+      "function_tags": ["testing", "reactor", "event_driven"],
+      "applicable_layers": [4],
+      "source": "Repository SUB-AGENT-SYSTEM.md",
+
+      "description": "Generates Reactor test code. Tests event handling with BlockingMessageBus.",
+
+      "responsibilities": [
+        "Setup BlockingMessageBus",
+        "Test event posting and verification",
+        "Test multiple event types",
+        "Test error handling",
+        "Test isolation",
+        "Verify reactor behavior"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-3-subagents/reactor-test-gen-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-3-subagents/archive/",
+        "repository_source": ".ai/prompts/reactor-test-generation-prompt.md"
+      },
+
+      "when_to_call": "After reactor code generation.",
+
+      "relationships": {
+        "calls": [],
+        "called_by": ["L3-CODE-GEN-005"],
+        "coordinates_with": ["L3-CODE-REV-004"]
+      },
+
+      "planned_implementation": "Phase 2 Week 3",
+      "notes": "From Repository."
+    },
+
+    {
+      "id": "L3-CODE-REV-004",
+      "name": "Reactor Code Review Sub-agent",
+      "level": 3,
+      "category": "Quality",
+      "version": "1.0.0",
+      "status": "from_repository",
+      "priority": "P2",
+      "phase": 2,
+      "function_tags": ["quality", "review", "event_driven"],
+      "applicable_layers": [4],
+      "source": "Repository SUB-AGENT-SYSTEM.md",
+
+      "description": "Reviews Reactor implementation quality. Checks event handling logic, cross-aggregate boundaries.",
+
+      "responsibilities": [
+        "Verify execute(Object event) correctness",
+        "Check event handling logic",
+        "Ensure cross-aggregate boundaries maintained",
+        "Validate error handling completeness",
+        "Check MessageBus integration",
+        "Verify isolation"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-3-subagents/reactor-code-review-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-3-subagents/archive/",
+        "repository_source": ".ai/prompts/reactor-code-review-prompt.md"
+      },
+
+      "when_to_call": "After reactor code and test generation.",
+
+      "relationships": {
+        "calls": [],
+        "called_by": ["L3-CODE-GEN-005"],
+        "coordinates_with": ["L3-TEST-GEN-004"]
+      },
+
+      "planned_implementation": "Phase 2 Week 3",
+      "notes": "From Repository."
+    },
+
+    {
+      "id": "L3-INFRA-001",
+      "name": "Profile Configuration Sub-agent",
+      "level": 3,
+      "category": "Infrastructure",
+      "version": "1.0.0",
+      "status": "from_repository",
+      "priority": "P2",
+      "phase": 2,
+      "function_tags": ["infrastructure", "configuration", "spring"],
+      "applicable_layers": [4],
+      "source": "Repository SUB-AGENT-SYSTEM.md",
+
+      "description": "Configures Spring Profiles to support InMemory and Outbox modes. Handles profile isolation.",
+
+      "responsibilities": [
+        "Configure Spring Profile isolation",
+        "Exclude DataSource auto-configuration",
+        "Setup conditional Bean loading",
+        "Configure properties files",
+        "Organize Configuration classes",
+        "Prevent profile conflicts"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-3-subagents/profile-config-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-3-subagents/archive/",
+        "repository_source": ".ai/prompts/profile-config-sub-agent-prompt.md"
+      },
+
+      "success_criteria": [
+        "Spring Boot starts in all profiles",
+        "No Repository Bean missing errors",
+        "No DataSource configuration errors",
+        "Complete profile isolation"
+      ],
+
+      "when_to_call": "Project initialization, when switching between InMemory/Outbox modes.",
+
+      "relationships": {
+        "calls": [],
+        "called_by": ["L2-ARCH-001"],
+        "coordinates_with": ["L3-INFRA-002"]
+      },
+
+      "planned_implementation": "Phase 2 Week 4",
+      "notes": "From Repository. Critical for multi-profile support."
+    },
+
+    {
+      "id": "L3-INFRA-002",
+      "name": "Outbox Pattern Implementation Sub-agent",
+      "level": 3,
+      "category": "Infrastructure",
+      "version": "1.0.0",
+      "status": "from_repository",
+      "priority": "P2",
+      "phase": 2,
+      "function_tags": ["infrastructure", "outbox", "event_sourcing"],
+      "applicable_layers": [4],
+      "source": "Repository SUB-AGENT-SYSTEM.md",
+
+      "description": "Implements Outbox Pattern for reliable event publishing. Generates OutboxData, OutboxMapper, OrmClient.",
+
+      "responsibilities": [
+        "Implement OutboxData interface (with @Transient)",
+        "Design OutboxMapper inner class",
+        "Define OrmClient interface",
+        "Configure OutboxRepository",
+        "Use Jakarta persistence annotations",
+        "Handle versioning and optimistic locking"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-3-subagents/outbox-pattern-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-3-subagents/archive/",
+        "repository_source": ".ai/prompts/outbox-sub-agent-prompt.md"
+      },
+
+      "when_to_call": "When implementing Outbox Repository for aggregates or upgrading from InMemory to Outbox.",
+
+      "relationships": {
+        "calls": [],
+        "called_by": ["L3-CODE-GEN-004"],
+        "coordinates_with": ["L3-INFRA-001"]
+      },
+
+      "planned_implementation": "Phase 2 Week 4",
+      "notes": "From Repository. Critical for reliable event publishing."
+    },
+
+    {
+      "id": "L3-FRONT-001",
+      "name": "Frontend Component Generation Sub-agent",
+      "level": 3,
+      "category": "Frontend",
+      "version": "1.0.0",
+      "status": "from_repository",
+      "priority": "P3",
+      "phase": 3,
+      "function_tags": ["frontend", "react", "typescript"],
+      "applicable_layers": [4],
+      "source": "Repository SUB-AGENT-SYSTEM.md",
+
+      "description": "Generates React + TypeScript components with Tailwind CSS styling.",
+
+      "responsibilities": [
+        "Generate React functional components",
+        "Define TypeScript props interfaces",
+        "Apply Tailwind CSS styling",
+        "Implement component composition",
+        "Ensure accessibility (a11y)",
+        "Optimize performance"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-3-subagents/frontend-component-gen-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-3-subagents/archive/",
+        "repository_source": ".ai/prompts/frontend-component-generation-prompt.md"
+      },
+
+      "when_to_call": "When implementing UI components.",
+
+      "relationships": {
+        "calls": ["L3-FRONT-002"],
+        "called_by": ["L2-SPEC-001"],
+        "coordinates_with": []
+      },
+
+      "planned_implementation": "Phase 3",
+      "notes": "From Repository. Frontend development support."
+    },
+
+    {
+      "id": "L3-FRONT-002",
+      "name": "Frontend API Integration Sub-agent",
+      "level": 3,
+      "category": "Frontend",
+      "version": "1.0.0",
+      "status": "from_repository",
+      "priority": "P3",
+      "phase": 3,
+      "function_tags": ["frontend", "api", "rtk_query"],
+      "applicable_layers": [4],
+      "source": "Repository SUB-AGENT-SYSTEM.md",
+
+      "description": "Generates frontend API integration code using RTK Query.",
+
+      "responsibilities": [
+        "Generate RTK Query API slices",
+        "Define Request/Response types",
+        "Implement error handling",
+        "Configure data caching strategies",
+        "Implement optimistic updates",
+        "Integrate WebSocket if needed"
+      ],
+
+      "prompt_file": {
+        "current": ".ai/agents/prompts/level-3-subagents/frontend-api-integration-agent.md",
+        "version": "N/A",
+        "size_kb": 0,
+        "archive_folder": ".ai/agents/prompts/level-3-subagents/archive/",
+        "repository_source": ".ai/prompts/frontend-api-integration-prompt.md"
+      },
+
+      "when_to_call": "When integrating frontend with backend APIs.",
+
+      "relationships": {
+        "calls": [],
+        "called_by": ["L3-FRONT-001"],
+        "coordinates_with": ["L3-CODE-GEN-003"]
+      },
+
+      "planned_implementation": "Phase 3",
+      "notes": "From Repository. Frontend API layer."
+    },
+    {
+      "id": "L2-DEPT-013",
+      "name": "Integration Agent",
+      "level": 2,
+      "category": "Infrastructure",
+      "function_tags": ["integration", "api_integration", "third_party"],
+      "description": "API integration specialist. Manages third-party API integrations, handles external service connections, ensures integration reliability.",
+      "responsibilities": [
+        "Manage third-party API integrations",
+        "Handle API authentication/authorization",
+        "Implement retry and circuit breaker patterns",
+        "Monitor integration health",
+        "Handle rate limiting",
+        "Create integration documentation"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/integration-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P2",
+      "implementation_phase": 2,
+      "called_by": ["API Agent", "Backend Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-014",
+      "name": "Message Queue Agent",
+      "level": 2,
+      "category": "Infrastructure",
+      "function_tags": ["message_queue", "async", "event_driven"],
+      "description": "Message queue specialist. Manages async messaging, event-driven architecture, message brokers (RabbitMQ, Kafka), and ensures reliable message delivery.",
+      "responsibilities": [
+        "Design message queue architecture",
+        "Configure message brokers",
+        "Implement pub/sub patterns",
+        "Handle message retries and DLQ",
+        "Monitor queue health",
+        "Ensure message ordering"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/message-queue-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P2",
+      "implementation_phase": 2,
+      "called_by": ["Architect Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-015",
+      "name": "Caching Agent",
+      "level": 2,
+      "category": "Performance",
+      "function_tags": ["caching", "redis", "performance"],
+      "description": "Caching specialist. Designs caching strategies, manages cache invalidation, implements distributed caching (Redis), and optimizes cache hit rates.",
+      "responsibilities": [
+        "Design caching strategies",
+        "Implement cache layers",
+        "Manage cache invalidation",
+        "Configure distributed caching",
+        "Monitor cache performance",
+        "Handle cache consistency"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/caching-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P2",
+      "implementation_phase": 2,
+      "called_by": ["Performance Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-016",
+      "name": "Logging Agent",
+      "level": 2,
+      "category": "Observability",
+      "function_tags": ["logging", "observability", "debugging"],
+      "description": "Logging specialist. Implements structured logging, log aggregation, log levels management, and ensures effective debugging capabilities.",
+      "responsibilities": [
+        "Implement structured logging",
+        "Configure log aggregation",
+        "Define log levels strategy",
+        "Ensure log security (no sensitive data)",
+        "Implement correlation IDs",
+        "Setup log retention policies"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/logging-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P2",
+      "implementation_phase": 2,
+      "called_by": ["DevOps Agent", "Monitoring Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-017",
+      "name": "Monitoring Agent",
+      "level": 2,
+      "category": "Observability",
+      "function_tags": ["monitoring", "alerting", "metrics"],
+      "description": "Monitoring specialist. Sets up application monitoring, defines SLIs/SLOs, creates alerting rules, and ensures system observability.",
+      "responsibilities": [
+        "Setup application monitoring",
+        "Define SLIs and SLOs",
+        "Create alerting rules",
+        "Configure dashboards",
+        "Monitor system health",
+        "Implement incident response"
+      ],
+      "applicable_layers": [],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/monitoring-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P3",
+      "implementation_phase": 3,
+      "called_by": ["DevOps Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-018",
+      "name": "Deployment Agent",
+      "level": 2,
+      "category": "DevOps",
+      "function_tags": ["deployment", "release", "rollback"],
+      "description": "Deployment specialist. Manages deployment strategies (blue-green, canary), automates releases, handles rollbacks, and ensures zero-downtime deployments.",
+      "responsibilities": [
+        "Implement deployment strategies",
+        "Automate release processes",
+        "Handle rollbacks",
+        "Ensure zero-downtime",
+        "Manage deployment pipelines",
+        "Coordinate with environments"
+      ],
+      "applicable_layers": [],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/deployment-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P3",
+      "implementation_phase": 3,
+      "called_by": ["DevOps Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-019",
+      "name": "Configuration Agent",
+      "level": 2,
+      "category": "Infrastructure",
+      "function_tags": ["configuration", "environment", "secrets"],
+      "description": "Configuration management specialist. Manages environment configurations, secrets management, feature flags, and ensures configuration security.",
+      "responsibilities": [
+        "Manage environment configs",
+        "Handle secrets management",
+        "Implement feature flags",
+        "Ensure config security",
+        "Manage config versioning",
+        "Setup config validation"
+      ],
+      "applicable_layers": [],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/configuration-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P2",
+      "implementation_phase": 2,
+      "called_by": ["DevOps Agent", "Security Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-020",
+      "name": "Error Handling Agent",
+      "level": 2,
+      "category": "Quality",
+      "function_tags": ["error_handling", "exception", "resilience"],
+      "description": "Error handling specialist. Designs error handling strategies, implements global exception handlers, manages error responses, and ensures graceful degradation.",
+      "responsibilities": [
+        "Design error handling strategies",
+        "Implement exception handlers",
+        "Define error response formats",
+        "Handle edge cases",
+        "Implement retry logic",
+        "Ensure graceful degradation"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/error-handling-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P1",
+      "implementation_phase": 1,
+      "called_by": ["Architect Agent", "API Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-021",
+      "name": "Validation Agent",
+      "level": 2,
+      "category": "Quality",
+      "function_tags": ["validation", "data_integrity", "constraints"],
+      "description": "Data validation specialist. Implements input validation, business rule validation, data constraints, and ensures data integrity.",
+      "responsibilities": [
+        "Implement input validation",
+        "Define validation rules",
+        "Validate business constraints",
+        "Ensure data integrity",
+        "Create validation messages",
+        "Handle validation errors"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/validation-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P1",
+      "implementation_phase": 1,
+      "called_by": ["API Agent", "Domain Expert Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-022",
+      "name": "Localization Agent",
+      "level": 2,
+      "category": "Support",
+      "function_tags": ["i18n", "l10n", "multilingual"],
+      "description": "Internationalization specialist. Implements i18n/l10n support, manages translations, handles locale-specific formatting, and ensures cultural appropriateness.",
+      "responsibilities": [
+        "Implement i18n support",
+        "Manage translations",
+        "Handle locale formatting",
+        "Support RTL languages",
+        "Manage resource bundles",
+        "Test localization"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/localization-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P3",
+      "implementation_phase": 3,
+      "called_by": ["Frontend Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-023",
+      "name": "Email Agent",
+      "level": 2,
+      "category": "Communication",
+      "function_tags": ["email", "notification", "messaging"],
+      "description": "Email service specialist. Manages email templates, implements email sending, handles email queues, and ensures email deliverability.",
+      "responsibilities": [
+        "Manage email templates",
+        "Implement email sending",
+        "Handle email queues",
+        "Track email delivery",
+        "Manage bounce handling",
+        "Ensure SMTP security"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/email-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P2",
+      "implementation_phase": 2,
+      "called_by": ["Notification Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-024",
+      "name": "Notification Agent",
+      "level": 2,
+      "category": "Communication",
+      "function_tags": ["notification", "push", "alerts"],
+      "description": "Notification service specialist. Manages multi-channel notifications (email, SMS, push), notification preferences, and ensures timely delivery.",
+      "responsibilities": [
+        "Manage notification channels",
+        "Handle user preferences",
+        "Implement push notifications",
+        "Send SMS notifications",
+        "Track notification delivery",
+        "Handle notification templates"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/notification-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P2",
+      "implementation_phase": 2,
+      "called_by": ["Application logic"],
+      "calls": ["Email Agent"],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-025",
+      "name": "Search Agent",
+      "level": 2,
+      "category": "Feature",
+      "function_tags": ["search", "elasticsearch", "full_text"],
+      "description": "Search functionality specialist. Implements full-text search, search indexing, search optimization, and integrates search engines (Elasticsearch).",
+      "responsibilities": [
+        "Implement full-text search",
+        "Manage search indexing",
+        "Optimize search queries",
+        "Configure search engine",
+        "Handle search relevance",
+        "Implement search suggestions"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/search-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P2",
+      "implementation_phase": 2,
+      "called_by": ["Query Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-026",
+      "name": "Analytics Agent",
+      "level": 2,
+      "category": "Intelligence",
+      "function_tags": ["analytics", "metrics", "insights"],
+      "description": "Analytics specialist. Implements usage analytics, tracks metrics, generates insights, and integrates analytics tools (Google Analytics, etc.).",
+      "responsibilities": [
+        "Implement usage analytics",
+        "Track user behavior",
+        "Generate insights",
+        "Integrate analytics tools",
+        "Create analytics dashboards",
+        "Ensure privacy compliance"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/analytics-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P3",
+      "implementation_phase": 3,
+      "called_by": ["Product Owner Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-027",
+      "name": "Reporting Agent",
+      "level": 2,
+      "category": "Intelligence",
+      "function_tags": ["reporting", "charts", "export"],
+      "description": "Reporting specialist. Generates reports, creates visualizations, handles data export (PDF, Excel), and ensures report accuracy.",
+      "responsibilities": [
+        "Generate reports",
+        "Create data visualizations",
+        "Implement export functionality",
+        "Handle report scheduling",
+        "Ensure report accuracy",
+        "Manage report templates"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/reporting-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P2",
+      "implementation_phase": 2,
+      "called_by": ["Analytics Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-028",
+      "name": "Backup Agent",
+      "level": 2,
+      "category": "Infrastructure",
+      "function_tags": ["backup", "restore", "disaster_recovery"],
+      "description": "Backup and recovery specialist. Implements backup strategies, manages data backups, handles restore procedures, and ensures business continuity.",
+      "responsibilities": [
+        "Implement backup strategies",
+        "Schedule automated backups",
+        "Test restore procedures",
+        "Manage backup retention",
+        "Ensure backup security",
+        "Handle disaster recovery"
+      ],
+      "applicable_layers": [],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/backup-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P3",
+      "implementation_phase": 3,
+      "called_by": ["DevOps Agent", "Database Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-029",
+      "name": "Audit Agent",
+      "level": 2,
+      "category": "Compliance",
+      "function_tags": ["audit", "compliance", "tracking"],
+      "description": "Audit trail specialist. Implements audit logging, tracks user actions, ensures compliance requirements, and provides audit reports.",
+      "responsibilities": [
+        "Implement audit logging",
+        "Track user actions",
+        "Ensure compliance",
+        "Generate audit reports",
+        "Handle data retention",
+        "Secure audit logs"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/audit-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P2",
+      "implementation_phase": 2,
+      "called_by": ["Security Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-030",
+      "name": "Versioning Agent",
+      "level": 2,
+      "category": "Management",
+      "function_tags": ["versioning", "api_versioning", "changelog"],
+      "description": "Version management specialist. Manages API versioning, semantic versioning, changelog generation, and ensures backward compatibility.",
+      "responsibilities": [
+        "Manage API versioning",
+        "Implement semantic versioning",
+        "Generate changelogs",
+        "Ensure backward compatibility",
+        "Handle version migration",
+        "Manage deprecation strategy"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/versioning-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P2",
+      "implementation_phase": 2,
+      "called_by": ["API Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-031",
+      "name": "Workflow Agent",
+      "level": 2,
+      "category": "Feature",
+      "function_tags": ["workflow", "state_machine", "orchestration"],
+      "description": "Workflow management specialist. Designs workflow engines, implements state machines, handles workflow orchestration, and manages business processes.",
+      "responsibilities": [
+        "Design workflow engines",
+        "Implement state machines",
+        "Handle workflow transitions",
+        "Manage business processes",
+        "Track workflow status",
+        "Handle workflow events"
+      ],
+      "applicable_layers": [2, 4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/workflow-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P2",
+      "implementation_phase": 2,
+      "called_by": ["Domain Expert Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-032",
+      "name": "Scheduler Agent",
+      "level": 2,
+      "category": "Infrastructure",
+      "function_tags": ["scheduler", "cron", "jobs"],
+      "description": "Job scheduling specialist. Implements job schedulers, manages cron jobs, handles background tasks, and ensures reliable task execution.",
+      "responsibilities": [
+        "Implement job schedulers",
+        "Manage cron jobs",
+        "Handle background tasks",
+        "Ensure task reliability",
+        "Monitor job execution",
+        "Handle job failures"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/scheduler-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P2",
+      "implementation_phase": 2,
+      "called_by": ["Application logic"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-033",
+      "name": "File Storage Agent",
+      "level": 2,
+      "category": "Infrastructure",
+      "function_tags": ["file_storage", "s3", "cdn"],
+      "description": "File storage specialist. Manages file uploads/downloads, integrates cloud storage (S3), handles CDN, and ensures file security.",
+      "responsibilities": [
+        "Manage file uploads/downloads",
+        "Integrate cloud storage",
+        "Handle CDN integration",
+        "Ensure file security",
+        "Manage file metadata",
+        "Implement file versioning"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/file-storage-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P2",
+      "implementation_phase": 2,
+      "called_by": ["API Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-034",
+      "name": "Image Processing Agent",
+      "level": 2,
+      "category": "Feature",
+      "function_tags": ["image_processing", "thumbnails", "optimization"],
+      "description": "Image processing specialist. Handles image uploads, generates thumbnails, optimizes images, and implements image transformations.",
+      "responsibilities": [
+        "Handle image uploads",
+        "Generate thumbnails",
+        "Optimize images",
+        "Implement transformations",
+        "Manage image formats",
+        "Ensure image security"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/image-processing-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P2",
+      "implementation_phase": 2,
+      "called_by": ["File Storage Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-035",
+      "name": "Payment Agent",
+      "level": 2,
+      "category": "Integration",
+      "function_tags": ["payment", "stripe", "transaction"],
+      "description": "Payment integration specialist. Integrates payment gateways (Stripe, PayPal), handles transactions, manages refunds, and ensures PCI compliance.",
+      "responsibilities": [
+        "Integrate payment gateways",
+        "Handle payment transactions",
+        "Manage refunds",
+        "Ensure PCI compliance",
+        "Handle payment webhooks",
+        "Track payment status"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/payment-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P3",
+      "implementation_phase": 3,
+      "called_by": ["API Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-036",
+      "name": "Authentication Agent",
+      "level": 2,
+      "category": "Security",
+      "function_tags": ["authentication", "jwt", "oauth"],
+      "description": "Authentication specialist. Implements user authentication, manages JWT tokens, integrates OAuth/SSO, and handles login/logout flows.",
+      "responsibilities": [
+        "Implement authentication",
+        "Manage JWT tokens",
+        "Integrate OAuth/SSO",
+        "Handle login/logout",
+        "Implement MFA",
+        "Manage sessions"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/authentication-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P1",
+      "implementation_phase": 1,
+      "called_by": ["Security Agent", "API Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-037",
+      "name": "Authorization Agent",
+      "level": 2,
+      "category": "Security",
+      "function_tags": ["authorization", "rbac", "permissions"],
+      "description": "Authorization specialist. Implements RBAC, manages permissions, enforces access control, and handles role-based security.",
+      "responsibilities": [
+        "Implement RBAC",
+        "Manage permissions",
+        "Enforce access control",
+        "Handle roles",
+        "Implement attribute-based access",
+        "Audit authorization"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/authorization-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P1",
+      "implementation_phase": 1,
+      "called_by": ["Security Agent", "Authentication Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    },
+
+    {
+      "id": "L2-DEPT-038",
+      "name": "Rate Limiting Agent",
+      "level": 2,
+      "category": "Security",
+      "function_tags": ["rate_limiting", "throttling", "api_protection"],
+      "description": "Rate limiting specialist. Implements rate limiting, API throttling, protects against abuse, and manages API quotas.",
+      "responsibilities": [
+        "Implement rate limiting",
+        "Configure throttling rules",
+        "Protect against abuse",
+        "Manage API quotas",
+        "Handle rate limit responses",
+        "Monitor API usage"
+      ],
+      "applicable_layers": [4],
+      "prompt_path": ".ai/agents/prompts/level-2-departments/rate-limiting-agent.md",
+      "prompt_version": null,
+      "status": "planned",
+      "priority": "P2",
+      "implementation_phase": 2,
+      "called_by": ["API Agent", "Security Agent"],
+      "calls": [],
+      "dependencies": [],
+      "from_repository": false,
+      "commands": []
+    }
+  ],
+
+  "additional_planned_agents": {
+    "note": "The following 50 agents are planned but not yet fully defined. They will be added as ForgeMind evolves.",
+    "count": 50,
+    "categories": {
+      "Level_2_Requirements": 5,
+      "Level_2_Architecture": 5,
+      "Level_2_Quality": 5,
+      "Level_2_Domain": 5,
+      "Level_2_Specification": 3,
+      "Level_2_Security": 3,
+      "Level_2_Performance": 3,
+      "Level_2_DevOps": 3,
+      "Level_3_Analysis": 3,
+      "Level_3_Validation": 3,
+      "Level_3_Clarification": 2,
+      "Level_3_Documentation": 2,
+      "Level_3_Reporting": 2,
+      "Level_3_Monitoring": 2,
+      "Level_3_Integration": 2,
+      "Level_3_Deployment": 2
+    },
+    "examples": [
+      "Security Architect Agent",
+      "Performance Analyst Agent",
+      "DevOps Engineer Agent",
+      "API Designer Agent",
+      "Database Designer Agent",
+      "Integration Specialist Agent",
+      "Documentation Writer Agent",
+      "Reporting Agent",
+      "Monitoring Agent",
+      "Deployment Agent"
+    ]
+  },
+
+  "statistics": {
+    "by_level": {
+      "level_1": 4,
+      "level_2": 6,
+      "level_3": 58
+    },
+    "by_status": {
+      "implemented": 1,
+      "from_repository": 17,
+      "planned": 50
+    },
+    "by_priority": {
+      "P0": 6,
+      "P1": 4,
+      "P2": 17,
+      "P3": 2,
+      "未定義": 39
+    },
+    "by_phase": {
+      "phase_0": 6,
+      "phase_1": 4,
+      "phase_2": 17,
+      "phase_3": 2,
+      "未定義": 39
+    }
+  },
+
+  "notes": [
+    "This catalog is the Single Source of Truth for all ForgeMind agents",
+    "Markdown version (AGENTS-CATALOG.md) is auto-generated from this JSON",
+    "18 sub-agents imported from Repository SUB-AGENT-SYSTEM.md",
+    "All agents will be implemented progressively across 4 phases",
+    "Each agent prompt will be versioned and archived when updated",
+    "Boss can request agent implementation priority changes"
+  ]
+}

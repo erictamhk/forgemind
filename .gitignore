@@ -28,3 +28,7 @@ __pycache__/
 .env
 *.key
 *.pem
+
+# ForgeMind config (optional: remove this line if you want to commit config)
+.forgemind/config.json
+.forgemind/config.json.bak
