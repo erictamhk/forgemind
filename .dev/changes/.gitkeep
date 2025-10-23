@@ -1,0 +1,3 @@
+# Proposed Changes (變更提案)
+OpenSpec的雙文件夾模式: changes/存放變更提案
+每個變更包含: proposal.md, impact.md, tasks.md, deltas/

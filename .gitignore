@@ -1,0 +1,30 @@
+# ForgeMind .gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp files
+*.tmp
+*.temp
+
+# Node modules (if used later)
+node_modules/
+
+# Python (if used)
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Secrets
+.env
+*.key
+*.pem
