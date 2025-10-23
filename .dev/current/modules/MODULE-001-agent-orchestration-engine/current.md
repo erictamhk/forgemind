@@ -35,6 +35,9 @@ Coordinate and manage the 68+ AI agents and sub-agents that execute all technica
 - Dynamic workflow adaptation when project agents are spawned
 - Workflow state persistence and recovery for interrupted sessions
 - Task delegation based on agent expertise and prompt-defined roles
+- Disciplined process integration: Plan → Ask → Execute validation
+- Constitution compliance checks before workflow execution
+- Agent discipline enforcement in parallel/sequential execution
 
 ### Communication Bus
 
@@ -49,6 +52,9 @@ Coordinate and manage the 68+ AI agents and sub-agents that execute all technica
 - Load balancing across available agents (considering prompt complexity)
 - Priority and dependency management for multi-agent workflows
 - Agent selection based on role definitions and current context
+- Constitution compliance validation for all agent assignments
+- Disciplined process enforcement in task delegation
+- Agent discipline monitoring in orchestration decisions
 
 ## Domains
 
@@ -115,23 +121,30 @@ Coordinate and manage the 68+ AI agents and sub-agents that execute all technica
 - Layer 1 (Module): ✅ Defined
 - Ready for: Domain definition and implementation planning
 
+## Constitution Integration
+
+- Validates all orchestration decisions against constitution principles
+- Enforces disciplined process in multi-agent workflows
+- Ensures agent discipline across orchestration operations
+- Integrates with anti-hallucination framework for decision validation
+
 ## Agent Creation Process
 
 ### System Agent Creation (ForgeMind Core)
 To create a new ForgeMind system agent:
 1. Define agent role and expertise area
-2. Write detailed prompt with commands, principles, and capabilities
+2. Write detailed prompt with commands, principles, and capabilities (including constitution compliance)
 3. Save prompt in appropriate level folder (`.ai/agents/prompts/level-X/`)
-4. Register agent in orchestration system
-5. Test agent integration and workflows
+4. Register agent in orchestration system with constitution validation
+5. Test agent integration and disciplined behavior
 
 ### Project Agent Generation (Domain Experts)
 To generate project-specific domain experts:
 1. Analyze project domain and requirements
 2. Identify needed expertise areas (HR, manufacturing, finance, etc.)
-3. Generate specialized prompts based on domain knowledge
-4. Spawn agents with project-specific context
-5. Integrate into project workflows
+3. Generate specialized prompts based on domain knowledge (constitution-compliant)
+4. Spawn agents with project-specific context and discipline enforcement
+5. Integrate into project workflows with constitution validation
 
 ## Next Steps
 

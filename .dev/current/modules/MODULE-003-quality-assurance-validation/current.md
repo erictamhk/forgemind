@@ -24,6 +24,9 @@ Ensure quality and prevent AI hallucinations through comprehensive validation an
 - 16+ technical failure cases from Repository applied to agent outputs
 - Real-time hallucination detection during agent execution
 - Automated correction suggestions for agent-generated content
+- Constitution compliance validation as primary check
+- Disciplined process enforcement in hallucination detection
+- Agent discipline validation patterns
 
 ### Quality Gate System
 
@@ -31,6 +34,9 @@ Ensure quality and prevent AI hallucinations through comprehensive validation an
 - Artifact validation rules tailored to agent capabilities
 - Approval workflow management for agent-generated artifacts
 - Quality metrics tracking across agent types and tasks
+- Constitution-based quality gates
+- Disciplined process validation in approval workflows
+- Agent discipline enforcement in quality checkpoints
 
 ### Validation Framework
 
@@ -109,12 +115,22 @@ Ensure quality and prevent AI hallucinations through comprehensive validation an
 - Layer 1 (Module): ✅ Defined
 - Ready for: Domain definition and validation rule implementation
 
+## Constitution Integration
+
+- Constitution rules as primary validation framework
+- Disciplined process enforcement in all validation operations
+- Agent discipline validation across all quality checks
+- Integration with two-tier agent system validation
+
 ## Agent Validation Focus
 
 - Validates AI agent prompts for completeness and clarity
 - Monitors agent behavior against defined role expectations
 - Prevents agent hallucinations through pattern recognition
 - Ensures agent outputs meet quality standards before acceptance
+- Constitution compliance validation for all agent actions
+- Disciplined process enforcement in agent validation
+- Agent discipline monitoring and enforcement
 
 ## Next Steps
 

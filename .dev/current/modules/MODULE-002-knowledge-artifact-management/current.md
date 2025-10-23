@@ -24,6 +24,9 @@ Manage the complete 5-layer structure, maintain bidirectional traceability, and 
 - Version management and history tracking for agent-generated content
 - Metadata management including agent source, creation context, and validation status
 - Artifact relationship mapping across layers and agent contributions
+- Constitution compliance validation for all stored artifacts
+- Agent discipline tracking in metadata
+- Disciplined process logging for artifact lifecycle events
 
 ### Traceability Engine
 
@@ -31,6 +34,9 @@ Manage the complete 5-layer structure, maintain bidirectional traceability, and 
 - Bidirectional link management between requirements, specs, and implementations
 - Dependency graph generation showing agent collaboration patterns
 - Impact propagation algorithms for changes initiated by agents
+- Constitution-based relationship validation
+- Disciplined process enforcement in traceability operations
+- Agent discipline monitoring in bidirectional links
 
 ### Impact Analysis System
 
@@ -119,12 +125,21 @@ Manage the complete 5-layer structure, maintain bidirectional traceability, and 
 - Layer 1 (Module): ✅ Defined
 - Ready for: Domain definition and artifact schema design
 
+## Constitution Integration
+
+- Validates artifact management against constitution rules
+- Enforces disciplined process in traceability operations
+- Ensures agent discipline in knowledge management
+- Integrates anti-hallucination checks for artifact validation
+
 ## Agent Integration
 
 - Tracks which AI agents created/modified each artifact
 - Maintains agent accountability and contribution history
 - Provides context for agent decision-making and validation
 - Supports agent learning from past artifacts and decisions
+- Enforces constitution compliance in agent operations
+- Validates agent discipline in artifact management
 
 ## Next Steps
 
