@@ -1,0 +1,127 @@
+{
+  "session_info": {
+    "session_id": "DISC-001",
+    "start_date": "2025-10-22",
+    "duration": "約2小時",
+    "clarity_progression": "10% → 40-50%",
+    "phase": "Step 1: Discover (完成)"
+  },
+  "problem_definition": {
+    "原始想法": "開發一個 AI assisted coding framework or tools or protocol，會在 claude code, gemini cli, codex, opencode 等工具中使用",
+    "精煉後的問題陳述": "\n建立一個「AI軟件開發公司」協調系統，解決AI coding的三大根本問題:\n1. 過早編碼 - AI在idea未明確時就開始腦補生成code\n2. 認知分歧 - 人類與AI混淆Requirements/Specification/Code三層domain\n3. 缺乏協調 - 無structured workflow、標準規範、質量控制機制\n        ",
+    "核心痛點": [
+      "AI第一步就腦補且不受控制",
+      "只能成功做單文件微型項目，中大型必定失敗",
+      "反覆修改導致代碼質量崩潰",
+      "現有spec-driven工具切入太晚(Specification階段)，應從Idea階段開始",
+      "人類與AI對specification理解完全不同"
+    ],
+    "問題規模": {
+      "成功邊界": "單個HTML+CSS+JS文件、簡單功能(如農曆轉換)",
+      "失敗邊界": "跨文件refactor、企業系統(MRP/HRMS)、大規模轉換",
+      "關鍵轉折點": "AI在第一步就開始腦補"
+    }
+  },
+  "solution_vision": {
+    "核心概念": "Multi-Agent Orchestration System - AI軟件開發公司",
+    "系統架構": {
+      "AI Agent團隊": [
+        "Domain Expert - 領域知識專家",
+        "Architect - 架構設計師",
+        "Tech Lead - 技術負責人",
+        "Code Reviewer - 代碼審查員",
+        "Designer - 系統設計師",
+        "Analyst - 需求分析師",
+        "Facilitator - 會議主持人"
+      ],
+      "協作機制": "主持人agent領導structured discussion，產出chat log與summary",
+      "人類角色": "Boss - 在關鍵決策點review與決定(遇到不清楚就問)",
+      "工作流程": "Idea(10%) → Requirements(50%) → Specification(90%) → Design → Code"
+    },
+    "關鍵創新": {
+      "三層Domain理論": "\nProblem Domain (現實世界)\n    ↓ Context, Rules, Forces\nRequirements (問題陳述) ← 設計師看這個\n    ↓ 翻譯\nSpecification (工程語言) ← Developer/AI看這個\n    ↓ 實現\nCode (機器語言)\n            ",
+      "雙軌Specification": {
+        "軌道1_可執行規格": "ezSpec工具 + Given-When-Then format (Executable)",
+        "軌道2_機器可讀規格": "JSON format (input/aggregate/pre-post-conditions/domain-events)",
+        "生成流程": "自然語言 → AI生成examples → 人類review → AI生成JSON → 最終review"
+      },
+      "Design-First防腦補": "Architect先畫design圖 → Coder根據圖紙寫code (如建築圖紙流程)",
+      "AI行為約束": "預設prompts定義編碼規則，AI agent嚴格檢查"
+    }
+  },
+  "technical_approach": {
+    "整合策略": "包裝prompts作為agents/sub-agents/commands在AI CLI工具中使用",
+    "Knowledge管理": "追蹤idea演化/決策理由/requirements-spec對應/code-spec追溯。初期用folder/filename/id/git commit",
+    "MVP定義": "完整運行一次Idea phase(如本次對話)。輸入:prompt/text/url。Agents(prompts)執行工作"
+  },
+  "identified_risks": {
+    "已識別的AI腦補模式": [
+      "自決coding規格",
+      "自決測試方式(用mock逃避)",
+      "自決folder structure",
+      "自決design pattern",
+      "用any逃避TypeScript error"
+    ],
+    "技術風險": [
+      "AI agents協作的token成本與latency",
+      "Specification雙軌制的一致性維護",
+      "Design圖的格式與AI理解能力",
+      "現有AI CLI工具的API限制"
+    ],
+    "採用風險": [
+      "學習曲線 - 需要理解三層domain理論",
+      "工具生態 - ezSpec等工具的成熟度",
+      "規模限制 - MVP只驗證Idea phase"
+    ]
+  },
+  "artifacts_produced": {
+    "會話記錄": [
+      "discover_questioning_framework.csv - 30個結構化問題",
+      "discover_round1_answers.csv - 第一輪回答",
+      "discover_round2_deep_answers.csv - 深度回答",
+      "discover_critical_questions.json - 關鍵設計問題"
+    ],
+    "分析產出": [
+      "問題空間地圖 - 三層級問題結構",
+      "AI腦補模式清單 - 5大固定模式",
+      "規模邊界分析 - 成功vs失敗範圍",
+      "解決方案輪廓 - 4大組件設計"
+    ],
+    "關鍵洞察": [
+      "「人類連idea都未想清楚，AI就開始腦補」",
+      "現有spec-driven工具切入點太晚",
+      "Requirements ≠ Specification ≠ Code (三層domain)",
+      "Executable + Machine-readable 雙規格",
+      "Design-first 防止腦補"
+    ]
+  },
+  "next_steps": {
+    "immediate": "進入Step 2: Define - Problem Framing",
+    "define_phase_goals": [
+      "用Problem Frames定義系統邊界",
+      "繪製Problem Frame圖",
+      "識別外部dependencies與constraints",
+      "建立Impact Map (目標→行為→交付物)",
+      "定義Idea Readiness Checklist"
+    ],
+    "future_phases": [
+      "Step 3: Develop (概念驗證) - Event Storming + Example Mapping",
+      "Step 4: Deliver (出場標準) - MVP原型實現"
+    ]
+  },
+  "success_criteria": {
+    "當前階段達成": [
+      "✅ 核心問題已充分理解",
+      "✅ 解決方案願景已初步清晰",
+      "✅ 技術路徑已有方向",
+      "✅ 關鍵風險已識別",
+      "✅ MVP範圍已定義"
+    ],
+    "未來驗證點": [
+      "⏳ Problem Frame圖完成並驗證",
+      "⏳ Specification雙軌制prototype測試",
+      "⏳ Multi-agent協作機制可行性驗證",
+      "⏳ 完整Idea phase流程實現"
+    ]
+  }
+}

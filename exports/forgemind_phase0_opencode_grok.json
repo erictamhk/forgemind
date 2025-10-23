@@ -1,0 +1,74 @@
+{
+  "phase": "Phase 0 - 免費驗證",
+  "duration": "1個月",
+  "cost": "$0 (完全免費)",
+  "platform": {
+    "primary": "OpenCode (開源Terminal Agent)",
+    "model": "Grok Code Fast 1 (xAI, 限時免費)",
+    "backup": "Ollama本地模型 (永久免費)"
+  },
+  "opencode_info": {
+    "github_stars": "26,000+",
+    "contributors": 188,
+    "monthly_users": "200,000+",
+    "license": "MIT",
+    "features": [
+      "Terminal-native TUI",
+      "75+ LLM providers支持",
+      "Multi-session management",
+      "LSP integration",
+      "File change tracking",
+      "Plan mode vs Build mode",
+      "Undo/redo support",
+      "Privacy-first (本地SQLite)"
+    ]
+  },
+  "grok_code_fast_1_info": {
+    "release_date": "2025-08",
+    "context_window": "256K tokens",
+    "speed": "~92 tokens/sec (1.2x faster than Claude)",
+    "swe_bench": "70.8%",
+    "pricing_normal": {
+      "input": "$0.20/M tokens",
+      "output": "$1.50/M tokens",
+      "cached": "$0.02/M tokens"
+    },
+    "free_access": "限時免費 (透過OpenCode等合作夥伴)",
+    "features": [
+      "Agentic coding workflows",
+      "Function calling",
+      "Structured outputs",
+      "Tool usage (grep, terminal, file editing)",
+      "Prompt caching (90%+ hit rate)"
+    ]
+  },
+  "weekly_plan": {
+    "week_1": "安裝與基礎設置",
+    "week_2": "驗證核心Agent (Facilitator, BA, Architect)",
+    "week_3": "測試非線性工作流 (回溯、跨Module、Anti-hallucination)",
+    "week_4": "評估與決策"
+  },
+  "success_criteria": {
+    "must_have": [
+      "AI能理解5層結構",
+      "能進行結構化對話",
+      "能處理簡單的非線性回溯",
+      "Terminal工作流可接受"
+    ],
+    "nice_to_have": [
+      "能處理跨Module依賴",
+      "Anti-hallucination能力好",
+      "Context management穩定"
+    ],
+    "deal_breaker": [
+      "AI完全無法理解5層結構",
+      "經常編造不存在的東西",
+      "Terminal太難用"
+    ]
+  },
+  "next_steps": {
+    "if_success": "進入Phase 1 (Claude Code $20/月)",
+    "if_needs_improvement": "繼續Phase 0或調整策略",
+    "if_grok_expires": "切換到Ollama本地模型 (免費)"
+  }
+}

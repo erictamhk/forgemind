@@ -1,0 +1,161 @@
+{
+  "research_date": "2025-10-22",
+  "tools_analyzed": {
+    "openspec": {
+      "developer": "Fission AI",
+      "github": "Fission-AI/OpenSpec",
+      "release_date": "2025-08",
+      "license": "Open Source",
+      "forgemind_fit": 95,
+      "key_innovations": [
+        "雙文件夾模式 (specs/ vs changes/)",
+        "Delta格式 (ADDED/MODIFIED/REMOVED)",
+        "Change管理",
+        "Brownfield-first設計"
+      ],
+      "what_forgemind_can_learn": [
+        "雙文件夾結構",
+        "Delta格式",
+        "Change文件夾組織",
+        "Archive機制",
+        "Proposal + Tasks分離"
+      ]
+    },
+    "speckit": {
+      "developer": "GitHub",
+      "github": "github/spec-kit",
+      "release_date": "2025-09",
+      "license": "Open Source",
+      "forgemind_fit": 85,
+      "key_innovations": [
+        "階段式工作流 (Phased Workflow)",
+        "Constitution (項目憲法)",
+        "Clarify階段",
+        "Analyze階段",
+        "Slash Commands"
+      ],
+      "what_forgemind_can_learn": [
+        "Constitution概念",
+        "Clarify階段 (防腦補)",
+        "Analyze階段 (質量保證)",
+        "Slash Commands",
+        "Phased Workflow",
+        "Tasks分解方法"
+      ]
+    },
+    "kiro": {
+      "developer": "Kiro.dev",
+      "github": "kirodotdev/Kiro",
+      "release_date": "2025-07",
+      "type": "Agentic IDE",
+      "forgemind_fit": 90,
+      "key_innovations": [
+        "Steering Files (項目上下文)",
+        "EARS Notation",
+        "Agent Hooks",
+        "Spec與Code雙向同步",
+        "Task Execution Interface",
+        "MCP整合"
+      ],
+      "what_forgemind_can_learn": [
+        "Steering Files概念",
+        "EARS Notation",
+        "三階段Workflow",
+        "Agent Hooks",
+        "雙向同步機制",
+        "Task執行界面",
+        "MCP整合"
+      ]
+    }
+  },
+  "comparison_matrix": {
+    "change_management": {
+      "openspec": "strongest",
+      "speckit": "basic",
+      "kiro": "basic",
+      "forgemind_needs": "strong"
+    },
+    "delta_format": {
+      "openspec": "yes",
+      "speckit": "no",
+      "kiro": "no",
+      "forgemind_needs": "yes"
+    },
+    "non_linear_support": {
+      "openspec": "designed_for",
+      "speckit": "possible",
+      "kiro": "possible",
+      "forgemind_needs": "core"
+    },
+    "brownfield_support": {
+      "openspec": "designed_for",
+      "speckit": "possible",
+      "kiro": "designed_for",
+      "forgemind_needs": "designed_for"
+    },
+    "clarify_phase": {
+      "openspec": "no",
+      "speckit": "yes",
+      "kiro": "implicit",
+      "forgemind_needs": "yes"
+    },
+    "analyze_phase": {
+      "openspec": "no",
+      "speckit": "yes",
+      "kiro": "implicit",
+      "forgemind_needs": "yes"
+    },
+    "constitution": {
+      "openspec": "no",
+      "speckit": "yes",
+      "kiro": "steering",
+      "forgemind_needs": "yes"
+    },
+    "ears_notation": {
+      "openspec": "no",
+      "speckit": "no",
+      "kiro": "yes",
+      "forgemind_needs": "consider"
+    }
+  },
+  "common_principles": [
+    "Spec as Source of Truth",
+    "Separation of 'What' vs 'How'",
+    "AI Context Management",
+    "Iterative Refinement",
+    "Human-in-the-Loop",
+    "Traceability",
+    "Version Control Friendly"
+  ],
+  "forgemind_integration_priorities": [
+    {
+      "priority": "P0 (Must Have)",
+      "features": [
+        "雙文件夾模式 (current/ vs changes/)",
+        "Delta格式 (ADDED/MODIFIED/REMOVED)",
+        "Constitution (項目憲法)",
+        "Clarify階段 (澄清模糊)",
+        "Analyze階段 (質量保證)"
+      ]
+    },
+    {
+      "priority": "P1 (Should Have)",
+      "features": [
+        "Steering Files (項目上下文)",
+        "EARS Notation (結構化需求)",
+        "Slash Commands",
+        "Agent Hooks",
+        "Lessons Learned文檔"
+      ]
+    },
+    {
+      "priority": "P2 (Nice to Have)",
+      "features": [
+        "Spec與Code雙向同步",
+        "Task Execution Interface",
+        "MCP整合",
+        "Custom Checklists"
+      ]
+    }
+  ]
+}

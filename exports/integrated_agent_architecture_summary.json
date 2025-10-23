@@ -1,0 +1,25 @@
+{
+  "main_agents": 38,
+  "existing_subagents": 18,
+  "suggested_subagents": 12,
+  "total_subagents": 30,
+  "total_agents": 68,
+  "phases": {
+    "mvp": {
+      "main": 10,
+      "sub": 0
+    },
+    "alpha": {
+      "main": 20,
+      "sub": 7
+    },
+    "beta": {
+      "main": 30,
+      "sub": 17
+    },
+    "production": {
+      "main": 38,
+      "sub": 29
+    }
+  }
+}

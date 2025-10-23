@@ -1,0 +1,133 @@
+{
+  "project_name": "ForgeMind",
+  "project_fullname": "Forge (鍛造) + Mind (思維) = AI Software Development Company",
+  "core_principle": "變更是常態，追溯是關鍵",
+  "change_management_layers": {
+    "idea_layer": {
+      "scenarios": [
+        "New Idea",
+        "Update Idea",
+        "Merge Ideas",
+        "Abandon Idea"
+      ],
+      "mechanisms": [
+        "Idea Registry",
+        "Version History",
+        "Impact Analysis",
+        "Approval Workflow"
+      ],
+      "git_commit_triggers": [
+        "New Idea registered",
+        "Idea version updated",
+        "Idea status changed",
+        "DISCOVER phase completed"
+      ]
+    },
+    "requirements_layer": {
+      "scenarios": [
+        "New Requirement",
+        "Update Requirement",
+        "Reprioritize",
+        "Split/Merge",
+        "Deprecate"
+      ],
+      "mechanisms": [
+        "Traceability Matrix",
+        "Change Request",
+        "Baseline",
+        "Dependency Graph"
+      ],
+      "git_commit_triggers": [
+        "New Requirement added",
+        "Requirement version updated",
+        "Change Request submitted/approved",
+        "Baseline created",
+        "Requirements Review completed"
+      ]
+    },
+    "specification_layer": {
+      "scenarios": [
+        "New Spec",
+        "Update Spec",
+        "Deprecate Spec",
+        "Upgrade Version"
+      ],
+      "mechanisms": [
+        "Spec Registry",
+        "Semantic Versioning",
+        "Impact Analysis",
+        "Approval Workflow",
+        "Deprecation"
+      ],
+      "git_commit_triggers": [
+        "Spec Draft created",
+        "Spec Review started",
+        "Spec Revision made",
+        "Spec Approved",
+        "Spec Baseline created",
+        "Spec Deprecated",
+        "Executable/JSON Spec updated"
+      ]
+    }
+  },
+  "git_strategy": {
+    "branch_strategy": {
+      "main": "Stable releases only",
+      "develop": "Development mainline",
+      "feature/*": "Feature development",
+      "hotfix/*": "Emergency fixes",
+      "release/*": "Release preparation"
+    },
+    "commit_types": [
+      "idea:new",
+      "idea:update",
+      "idea:discovery",
+      "idea:status",
+      "req:new",
+      "req:update",
+      "req:cr",
+      "req:baseline",
+      "req:review",
+      "spec:draft",
+      "spec:review",
+      "spec:revision",
+      "spec:approved",
+      "spec:baseline",
+      "spec:deprecated",
+      "agent:prompt",
+      "agent:workflow",
+      "agent:checklist",
+      "docs:update",
+      "docs:new",
+      "config:update",
+      "ask:record"
+    ],
+    "commit_frequency": "小步快跑，頻繁提交",
+    "tagging_strategy": "vMAJOR.MINOR.PATCH for milestones"
+  },
+  "notification_system": {
+    "change_notification_matrix": "Automated notifications based on change type",
+    "change_dashboard": "Real-time view of recent changes and pending approvals",
+    "automated_checks": {
+      "pre_commit": [
+        "Traceability",
+        "Impact Analysis",
+        "Anti-Hallucination",
+        "Version Consistency"
+      ],
+      "post_commit": [
+        "Update Dashboard",
+        "Send Notifications",
+        "Update Traceability",
+        "Log Change"
+      ]
+    }
+  },
+  "key_files": {
+    "idea_registry": ".dev/ideas/idea-registry.json",
+    "traceability_matrix": ".dev/requirements/traceability-matrix.csv",
+    "spec_registry": ".dev/specs/spec-registry.json",
+    "change_dashboard": ".dev/dashboards/change-dashboard.md",
+    "notification_matrix": ".dev/config/change-notification-matrix.json"
+  }
+}

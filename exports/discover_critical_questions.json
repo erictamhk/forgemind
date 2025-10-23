@@ -1,0 +1,44 @@
+[
+  {
+    "id": "CQ1",
+    "topic": "Agent協作機制",
+    "question": "AI agents「開會」的具體形式是什麼？\n  - 是sequential對話(一個接一個發言)？\n  - 是parallel思考然後彙總？\n  - 是有主持人的structured discussion？\n  - 會議記錄如何被結構化儲存？",
+    "why": "協作機制的實現細節決定了系統的可行性"
+  },
+  {
+    "id": "CQ2",
+    "topic": "Decision Gate設計",
+    "question": "什麼情況下AI agents會「問Boss」？\n  - 有衝突無法決定時？\n  - 不確定性超過某個閾值？\n  - 需要business decision時？\n  - 固定檢查點(如phase完成)時？\n  如何避免「問太多」或「問太少」？",
+    "why": "人類介入的時機與頻率決定了效率與質量的平衡"
+  },
+  {
+    "id": "CQ3",
+    "topic": "Specification Language",
+    "question": "你理想中的Specification長什麼樣子？\n  - 給一個MRP系統的「訂單處理」功能的spec例子\n  - 它應該包含什麼？(前置條件、後置條件、invariants、業務規則？)\n  - 用什麼格式？(Gherkin、Design by Contract、形式化語言？)\n  - 如何確保AI與人類對spec的理解一致？",
+    "why": "Spec的格式決定了能否消除人類-AI認知分歧"
+  },
+  {
+    "id": "CQ4",
+    "topic": "腦補防護機制",
+    "question": "如何實現「強制詢問而非腦補」？\n  - AI如何知道自己在「假設」而非「依據spec」？\n  - 當AI想決定folder structure時，如何攔截並要求architect agent決定？\n  - 當AI想用any時，如何強制它提問type定義？\n  - 這些規則如何被編碼？(規則引擎、prompt engineering、工具調用？)",
+    "why": "防腦補是核心挑戰，必須有具體機制"
+  },
+  {
+    "id": "CQ5",
+    "topic": "Knowledge Base架構",
+    "question": "Knowledge Base要追蹤什麼？\n  - Idea演化歷程？\n  - 每個決策的理由與alternatives？\n  - Requirements與Spec的對應關係？\n  - Code與Spec的追溯關係？\n  如何查詢？(圖數據庫、向量搜索、結構化查詢？)",
+    "why": "追溯能力決定了系統的可維護性與透明度"
+  },
+  {
+    "id": "CQ6",
+    "topic": "與現有工具整合",
+    "question": "這個系統如何與Claude Code/Gemini CLI等工具整合？\n  - 是wrap它們的API？\n  - 是提供統一的接口層？\n  - 是產生prompts讓它們執行？\n  - 如何處理不同工具的能力差異？",
+    "why": "整合策略決定了實現路徑"
+  },
+  {
+    "id": "CQ7",
+    "topic": "最小可行原型",
+    "question": "第一個prototype應該驗證什麼？\n  - Idea→Requirements澄清流程？\n  - Multi-agent協作機制？\n  - Specification格式與驗證？\n  - 還是端到端(Idea→Code)但只做極小範圍？",
+    "why": "MVP定義決定了第一步往哪走"
+  }
+]

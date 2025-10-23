@@ -1,0 +1,68 @@
+{
+  "total_roles": 38,
+  "departments": [
+    {
+      "Department": "Architecture & Design",
+      "Count": 5
+    },
+    {
+      "Department": "Business Analysis",
+      "Count": 4
+    },
+    {
+      "Department": "Coordination",
+      "Count": 2
+    },
+    {
+      "Department": "Development",
+      "Count": 6
+    },
+    {
+      "Department": "Documentation",
+      "Count": 2
+    },
+    {
+      "Department": "Domain Specific",
+      "Count": 3
+    },
+    {
+      "Department": "Executive Leadership",
+      "Count": 2
+    },
+    {
+      "Department": "Project Management",
+      "Count": 3
+    },
+    {
+      "Department": "Quality Assurance",
+      "Count": 5
+    },
+    {
+      "Department": "Specialized Tech",
+      "Count": 4
+    },
+    {
+      "Department": "Support & Maintenance",
+      "Count": 2
+    }
+  ],
+  "capability_levels": {
+    "Very High": 1,
+    "High": 20,
+    "Medium-High": 7,
+    "Medium": 9,
+    "Low-Medium": 1
+  },
+  "critical_combinations": {
+    "核心決策層 (5個)": 5,
+    "需求與設計層 (8個)": 8,
+    "開發實施層 (7個)": 7,
+    "質量保證層 (5個)": 5,
+    "項目管理層 (3個)": 3,
+    "支援與維護層 (6個)": 6,
+    "企業系統專屬 (3個)": 3
+  },
+  "mvp_roles": 10,
+  "full_team_roles": 38,
+  "expansion_factor": 5.4
+}

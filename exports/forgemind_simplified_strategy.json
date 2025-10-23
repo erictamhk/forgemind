@@ -1,0 +1,48 @@
+{
+  "project": "ForgeMind",
+  "philosophy": "Boss專注創造，AI負責執行",
+  "boss_responsibilities": [
+    "提出模糊的idea",
+    "回答AI的問題",
+    "Review最終產出"
+  ],
+  "ai_responsibilities": [
+    "所有文檔管理",
+    "所有版本控制",
+    "所有追溯性管理",
+    "所有Impact Analysis",
+    "所有通知與更新",
+    "所有Git操作",
+    "所有報告生成",
+    "所有質量控制"
+  ],
+  "git_strategy": {
+    "branches": [
+      "main"
+    ],
+    "workflow": "AI直接commit到main",
+    "boss_interaction": "Boss完全不需要懂Git"
+  },
+  "boss_interface": {
+    "primary": ".dev/dashboards/boss-dashboard.md",
+    "actions": [
+      "Review",
+      "Approve",
+      "Ask Questions"
+    ],
+    "time_per_day": "1-2小時"
+  },
+  "automation": {
+    "auto_commit": "每次會議、階段、批准後自動commit",
+    "auto_update": "所有文檔、追溯矩陣、Dashboard自動更新",
+    "auto_notify": "自動通知相關Agent和Boss",
+    "auto_analyze": "自動Impact Analysis和質量檢查"
+  },
+  "boss_typical_day": [
+    "早上查看Dashboard (5分鐘)",
+    "Review需要批准的項目 (10-30分鐘)",
+    "參加Facilitator會議 (30-60分鐘)",
+    "Design/Spec Review (30-60分鐘)",
+    "回答AI的問題 (隨時，每次1-5分鐘)"
+  ]
+}

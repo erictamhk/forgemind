@@ -1,0 +1,40 @@
+{
+  "repository": "https://gitlab.com/TeddyChen/ai-coding-exercise",
+  "owner": "TeddyChen",
+  "created": "2025-09-27",
+  "last_activity": "2025-10-04",
+  "commits": 12,
+  "stars": 3,
+  "purpose": "製作幫助開發人員採用 AI Coding 的範本專案",
+  "directory_structure": {
+    ".ai_files": 18,
+    ".dev_folders": 6,
+    "top_level_files": 5
+  },
+  "tech_stack": {
+    "language": "Java 21",
+    "framework": "Spring Boot 3.1.2",
+    "database": "PostgreSQL",
+    "testing": "JUnit 5 + PITest",
+    "architecture": "DDD + Clean Architecture + CQRS + Event Sourcing"
+  },
+  "key_features": [
+    "Complete AI Coding Framework in .ai/",
+    "Sub-agent System with Prompts",
+    "Anti-Hallucination Database (FAILURE-CASES.md)",
+    "Architecture-aware Code Generation",
+    "Executable Specifications (ezSpec BDD)",
+    "Mutation Testing (PITest)",
+    "Profile-based Testing",
+    "Human-AI Conversation Recording (.dev/ask/)",
+    "Complete Documentation (18 files in .ai/)",
+    "Continuous Improvement (12 commits in 8 days)"
+  ],
+  "value_for_mvp": {
+    "reference_implementation": "Complete working example",
+    "ready_to_use": "Can directly copy .ai/ directory",
+    "proven_practices": "Real commits show evolution",
+    "learning_resource": "Better than reading docs",
+    "fast_start": "Save weeks/months of development"
+  }
+}

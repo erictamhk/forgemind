@@ -1,0 +1,402 @@
+{
+  "v0_1": {
+    "name": "Idea→Spec 發現協議 v0.1",
+    "model": "4D Workflow",
+    "focus": "AI主導的需求發現",
+    "phases": [
+      {
+        "phase": "Step 1: Discover",
+        "description": "AI 主導的需求訪談與研究",
+        "activities": [
+          "需求訪談",
+          "問題發現",
+          "背景研究",
+          "利益相關者分析"
+        ],
+        "output": "需求草稿",
+        "ai_role": "主導訪談",
+        "boss_role": "回答問題"
+      },
+      {
+        "phase": "Step 2: Define",
+        "description": "問題框定與邊界",
+        "activities": [
+          "定義問題",
+          "確定範圍",
+          "設定邊界",
+          "優先級排序"
+        ],
+        "output": "Requirements",
+        "ai_role": "框定問題",
+        "boss_role": "確認邊界"
+      },
+      {
+        "phase": "Step 3: Develop",
+        "description": "概念驗證而非落地開發",
+        "activities": [
+          "概念驗證",
+          "快速原型",
+          "技術可行性",
+          "架構設計"
+        ],
+        "output": "Specification",
+        "ai_role": "設計方案",
+        "boss_role": "驗證概念"
+      },
+      {
+        "phase": "Step 4: Delivery",
+        "description": "交付",
+        "activities": [
+          "文檔輸出",
+          "原型展示",
+          "下一步計劃"
+        ],
+        "output": "可執行的Spec",
+        "ai_role": "生成文檔",
+        "boss_role": "決定是否實施"
+      }
+    ],
+    "characteristics": {
+      "linearity": "線性 (單向)",
+      "focus": "需求發現到規格",
+      "backtracking": "困難",
+      "clarity_tracking": "無",
+      "impact_analysis": "無"
+    }
+  },
+  "v0_2": {
+    "name": "ForgeMind Complete System v0.2",
+    "model": "5-Layer Lifecycle",
+    "focus": "完整開發生命週期",
+    "phases": [
+      {
+        "phase": "Layer 0: Idea",
+        "description": "商業想法，持續精煉",
+        "activities": [
+          "Discover (對應v0.1 Step 1)",
+          "Vision定義",
+          "Goals設定",
+          "Clarity Level追蹤 (10% → 100%)",
+          "版本管理"
+        ],
+        "sub_phases": {
+          "Discover": "AI主導訪談 (Facilitator Agent)",
+          "Clarify": "主動識別模糊 (SpecKit)",
+          "Refine": "持續精煉版本",
+          "Track": "Clarity Level追蹤"
+        },
+        "output": "Idea (current.md + versions/)",
+        "agents": [
+          "Facilitator Agent (主持)",
+          "BA Agent (收集)",
+          "Product Owner Agent (優先級)"
+        ],
+        "boss_involvement": "高 (提供vision)",
+        "clarity_target": "40%+",
+        "can_backtrack": true
+      },
+      {
+        "phase": "Layer 1: Module",
+        "description": "功能模組，Package管理",
+        "activities": [
+          "Module識別",
+          "Package結構設計",
+          "依賴關係管理",
+          "依賴圖生成"
+        ],
+        "output": "Module definitions + dependency-graph.json",
+        "agents": [
+          "Architect Agent (設計)",
+          "Dependency Manager Agent"
+        ],
+        "boss_involvement": "中 (確認模組)",
+        "clarity_target": "50%+",
+        "can_backtrack": true,
+        "innovation": "新增！v0.1沒有"
+      },
+      {
+        "phase": "Layer 2: Domain",
+        "description": "DDD Bounded Context",
+        "activities": [
+          "Define (對應v0.1 Step 2的一部分)",
+          "Bounded Context定義",
+          "Entities/Value Objects",
+          "Domain Events",
+          "Aggregate設計"
+        ],
+        "sub_phases": {
+          "Define": "定義邊界",
+          "Model": "領域建模",
+          "Events": "事件風暴"
+        },
+        "output": "bounded-context.md (DDD完整定義)",
+        "agents": [
+          "Domain Expert Agent",
+          "Architect Agent",
+          "DDD Specialist Agent"
+        ],
+        "boss_involvement": "中 (確認業務邏輯)",
+        "clarity_target": "70%+",
+        "can_backtrack": true,
+        "innovation": "新增！v0.1沒有"
+      },
+      {
+        "phase": "Layer 3: Requirement",
+        "description": "功能需求，EARS格式",
+        "activities": [
+          "Define (對應v0.1 Step 2)",
+          "User Stories",
+          "Acceptance Criteria (EARS)",
+          "Dependencies追蹤",
+          "Clarify階段 (SpecKit)"
+        ],
+        "sub_phases": {
+          "Collect": "收集需求",
+          "Clarify": "澄清模糊 (防猜測)",
+          "Structure": "EARS Notation",
+          "Validate": "Analyze階段"
+        },
+        "output": "current.md (EARS格式)",
+        "agents": [
+          "Requirements Engineer",
+          "BA Agent",
+          "QA Agent (驗證)"
+        ],
+        "boss_involvement": "中 (確認需求)",
+        "clarity_target": "90%+",
+        "can_backtrack": true
+      },
+      {
+        "phase": "Layer 4: Specification",
+        "description": "詳細規格，可執行",
+        "activities": [
+          "Develop (對應v0.1 Step 3)",
+          "Executable Spec (ezSpec BDD)",
+          "Machine-Readable (JSON)",
+          "Anti-Hallucination檢查",
+          "Quality Gates"
+        ],
+        "sub_phases": {
+          "Write": "撰寫Given-When-Then",
+          "Check": "21+個Anti-Hallucination",
+          "Analyze": "Quality Gates通過",
+          "Approve": "Boss批准"
+        },
+        "output": "spec.spec (ezSpec) + spec.json",
+        "agents": [
+          "Requirements Engineer",
+          "QA Agent",
+          "Anti-Hallucination Agent",
+          "26個Sub-agents (Code生成)"
+        ],
+        "boss_involvement": "低 (批准即可)",
+        "clarity_target": "95%+",
+        "can_backtrack": true
+      },
+      {
+        "phase": "Implementation & Delivery",
+        "description": "代碼實施與交付",
+        "activities": [
+          "Delivery (對應v0.1 Step 4)",
+          "Code生成 (26個Sub-agents)",
+          "Code Review",
+          "測試執行",
+          "部署"
+        ],
+        "output": "Working code + tests",
+        "agents": [
+          "26個Sub-agents",
+          "Code Review Agent",
+          "Test Agent"
+        ],
+        "boss_involvement": "極低 (驗收)",
+        "can_backtrack": true
+      }
+    ],
+    "characteristics": {
+      "linearity": "非線性 (雙向)",
+      "focus": "完整生命週期",
+      "backtracking": "完全支持 (3秒Impact Analysis)",
+      "clarity_tracking": "每層都有 (10% → 95%+)",
+      "impact_analysis": "3秒完成",
+      "change_management": "OpenSpec雙文件夾 + Delta",
+      "quality_assurance": "Clarify + Analyze + 21+檢查"
+    }
+  },
+  "mapping": {
+    "v0.1 Step 1: Discover": {
+      "maps_to": "v0.2 Layer 0: Idea (Discover sub-phase)",
+      "evolution": [
+        "✅ 保留: AI主導訪談",
+        "➕ 新增: Facilitator Agent專門負責",
+        "➕ 新增: Clarify階段 (主動識別模糊)",
+        "➕ 新增: Clarity Level追蹤",
+        "➕ 新增: 版本管理",
+        "➕ 新增: 可以隨時回溯"
+      ],
+      "enhancement_factor": "5x"
+    },
+    "v0.1 Step 2: Define": {
+      "maps_to": "v0.2 Layer 1 Module + Layer 2 Domain + Layer 3 Requirement",
+      "evolution": [
+        "✅ 保留: 問題框定與邊界",
+        "🔄 拆分: 分成3個獨立Layer",
+        "➕ 新增: Module層 (Package管理)",
+        "➕ 新增: Domain層 (DDD Bounded Context)",
+        "➕ 新增: EARS Notation (清晰需求)",
+        "➕ 新增: Analyze階段 (Quality Gates)",
+        "➕ 新增: 依賴追蹤"
+      ],
+      "enhancement_factor": "10x"
+    },
+    "v0.1 Step 3: Develop": {
+      "maps_to": "v0.2 Layer 4: Specification",
+      "evolution": [
+        "✅ 保留: 概念驗證",
+        "➕ 新增: Executable Spec (ezSpec BDD)",
+        "➕ 新增: Machine-Readable (JSON)",
+        "➕ 新增: 21+個Anti-Hallucination檢查",
+        "➕ 新增: Quality Gates",
+        "🔄 升級: 從概念到可執行規格"
+      ],
+      "enhancement_factor": "8x"
+    },
+    "v0.1 Step 4: Delivery": {
+      "maps_to": "v0.2 Implementation & Delivery",
+      "evolution": [
+        "✅ 保留: 交付輸出",
+        "➕ 新增: 26個Sub-agents自動生成Code",
+        "➕ 新增: Code Review Agent",
+        "➕ 新增: 自動測試執行",
+        "🔄 升級: 從文檔到Working code"
+      ],
+      "enhancement_factor": "20x"
+    }
+  },
+  "innovations": [
+    {
+      "innovation": "1. 從4步驟到5+1層",
+      "v01": "4個線性步驟 (Discover → Define → Develop → Delivery)",
+      "v02": "5層結構 + Implementation (Idea → Module → Domain → Req → Spec → Code)",
+      "why": "意識到需要Module和Domain層來管理架構複雜度"
+    },
+    {
+      "innovation": "2. 從線性到非線性",
+      "v01": "只能往前走，回溯困難",
+      "v02": "任何時候可以回到任何Layer，3秒Impact Analysis",
+      "why": "從OpenSpec學習雙文件夾模式 + Delta格式"
+    },
+    {
+      "innovation": "3. 從單次對話到持續精煉",
+      "v01": "一次性對話，完成就結束",
+      "v02": "Idea有版本管理 (v0.1, v0.2, v0.3...)，持續提升Clarity",
+      "why": "開發是迭代過程，Idea會不斷演化"
+    },
+    {
+      "innovation": "4. 從簡單提問到Clarify階段",
+      "v01": "AI問，Boss答",
+      "v02": "AI主動識別模糊，結構化提問，防止猜測",
+      "why": "從SpecKit學習Clarify階段"
+    },
+    {
+      "innovation": "5. 從無檢查到21+個Anti-Hallucination",
+      "v01": "沒有檢查機制",
+      "v02": "5大模式 + 16個FAILURE-CASES = 21+個檢查",
+      "why": "AI容易編造內容，需要自動檢查"
+    },
+    {
+      "innovation": "6. 從單一AI到68個Agent",
+      "v01": "可能1個AI做所有事",
+      "v02": "68個專門Agent協作 (Level 1/2/3)",
+      "why": "分工明確，專業性更高"
+    },
+    {
+      "innovation": "7. 從文檔到Code",
+      "v01": "輸出是Specification文檔",
+      "v02": "輸出是Working code (26個Sub-agents生成)",
+      "why": "從Repository學習Sub-agent系統"
+    },
+    {
+      "innovation": "8. 從無追溯到3秒Impact Analysis",
+      "v01": "沒有追溯機制",
+      "v02": "完整追溯矩陣，改動任何地方都知道影響",
+      "why": "非線性開發必須有追溯"
+    },
+    {
+      "innovation": "9. 從自由格式到EARS Notation",
+      "v01": "需求是自由格式",
+      "v02": "需求是EARS格式 (WHEN...SHALL...)，清晰可測試",
+      "why": "從Kiro學習EARS Notation"
+    },
+    {
+      "innovation": "10. 從無自動化到Agent Hooks",
+      "v01": "所有事情都手動",
+      "v02": "Agent Hooks自動響應變更，5+個自動化腳本",
+      "why": "從Kiro學習Agent Hooks"
+    }
+  ],
+  "boss_perspective": {
+    "v0.1": {
+      "interaction": "跟AI對話4次",
+      "time_per_interaction": "未知",
+      "total_time": "可能幾小時",
+      "decision_points": "不明確",
+      "confusion": "可能有 (AI會猜測)",
+      "output": "Specification文檔",
+      "can_change_mind": "困難",
+      "visibility": "低"
+    },
+    "v0.2": {
+      "interaction": "每天1-2小時，持續對話",
+      "time_per_interaction": "短而頻繁",
+      "total_time": "分散在多天",
+      "decision_points": "13個明確決策點",
+      "confusion": "Clarify階段主動澄清",
+      "output": "Working code",
+      "can_change_mind": "隨時 (3秒Impact Analysis)",
+      "visibility": "高 (Boss Dashboard)"
+    }
+  },
+  "evolution_drivers": [
+    {
+      "driver": "1. 現實複雜度",
+      "realization": "真實項目不是4步驟就能完成",
+      "solution": "擴展到5層 + 持續迭代"
+    },
+    {
+      "driver": "2. 架構管理需求",
+      "realization": "沒有Module和Domain層，無法管理大型項目",
+      "solution": "新增Module (Package) 和 Domain (DDD) 層"
+    },
+    {
+      "driver": "3. OpenSpec啟發",
+      "realization": "開發不是線性的，需要回溯",
+      "solution": "雙文件夾模式 + Delta格式 + 非線性"
+    },
+    {
+      "driver": "4. SpecKit啟發",
+      "realization": "AI會猜測，造成誤解",
+      "solution": "Clarify階段 + Analyze階段 + Constitution"
+    },
+    {
+      "driver": "5. Kiro啟發",
+      "realization": "手動管理太累，需要自動化",
+      "solution": "Agent Hooks + EARS + Steering Files"
+    },
+    {
+      "driver": "6. Repository啟發",
+      "realization": "需要技術標準和Code生成",
+      "solution": "Sub-agents + FAILURE-CASES + Templates"
+    },
+    {
+      "driver": "7. Boss模式定位",
+      "realization": "目標用戶是非技術Boss",
+      "solution": "Facilitator Agent + Dashboard + 簡化交互"
+    },
+    {
+      "driver": "8. 質量擔憂",
+      "realization": "AI容易編造內容",
+      "solution": "21+個Anti-Hallucination檢查"
+    }
+  ]
+}

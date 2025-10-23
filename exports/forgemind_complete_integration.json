@@ -1,0 +1,118 @@
+{
+  "project": "ForgeMind",
+  "version": "2.0 - 整合Repository實踐",
+  "learned_from_repository": {
+    ".ai_vs_dev_structure": "清晰分離通用框架和項目特定內容",
+    "sub_agent_system": "18個Sub-agents自動化工作流",
+    "checklist_driven": "CODE-REVIEW-CHECKLIST等驅動開發",
+    "failure_cases": "16個錯誤案例WRONG vs CORRECT",
+    "index_navigation": "INDEX.md快速導航系統",
+    "profile_based_testing": "test-inmemory vs test-outbox",
+    "ezspec_bdd": "Given-When-Then可執行規格",
+    "prompts_structure": "每個Agent專門的Prompt文件"
+  },
+  "forgemind_additions": {
+    "five_layer_structure": "Idea → Module → Domain → Requirement → Spec",
+    "state_machines": "每層獨立狀態機，可任意回溯",
+    "bidirectional_traceability": "上溯/下溯/橫向追溯",
+    "impact_analysis": "3秒內分析變更影響",
+    "module_dependency": "自動管理依賴和並行開發",
+    "boss_mode": "Facilitator主持，Boss只需回答問題",
+    "ai_auto_commit": "AI自動Git操作，Boss完全不管",
+    "simplified_dashboard": "Boss只看簡化視圖"
+  },
+  "complete_file_structure": {
+    ".ai": {
+      "agents": [
+        "prompts (68)",
+        "workflows",
+        "checklists"
+      ],
+      "standards": [
+        "anti-hallucination",
+        "domain-theory",
+        "output-formats",
+        "quality-gates"
+      ],
+      "templates": [
+        "idea",
+        "module",
+        "domain",
+        "requirement",
+        "specification"
+      ],
+      "scripts": [
+        "auto-commit",
+        "check-traceability",
+        "analyze-impact",
+        "等等"
+      ],
+      "docs": [
+        "ARCHITECTURE",
+        "AGENT-CATALOG",
+        "NON-LINEAR-WORKFLOW",
+        "等等"
+      ],
+      "lessons": [
+        "FAILURE-CASES",
+        "CRITICAL-LESSONS",
+        "HALLUCINATION-PATTERNS"
+      ]
+    },
+    ".dev": {
+      "ideas": [
+        "registry",
+        "IDEA-001/versions"
+      ],
+      "modules": [
+        "registry",
+        "dependency-graph",
+        "MODULE-001/"
+      ],
+      "domains": [
+        "registry",
+        "DOMAIN-001/bounded-context"
+      ],
+      "requirements": [
+        "traceability-matrix",
+        "change-requests",
+        "baselines"
+      ],
+      "specs": [
+        "registry",
+        "executable/",
+        "json/",
+        "SPEC-001/versions"
+      ],
+      "traceability": [
+        "master-matrix",
+        "impact-cache"
+      ],
+      "dashboards": [
+        "boss-dashboard ← Boss看這個！"
+      ],
+      "ask": [
+        "對話記錄"
+      ],
+      "adr": [
+        "Architecture Decisions"
+      ]
+    }
+  },
+  "boss_workflow": {
+    "daily": [
+      "打開 .dev/dashboards/boss-dashboard.md",
+      "查看待辦事項",
+      "Review需要批准的內容",
+      "回答AI的問題"
+    ],
+    "time_per_day": "1-2小時",
+    "no_need_to_know": [
+      "Git操作",
+      "文檔結構",
+      "追溯矩陣",
+      "版本管理",
+      "影響分析細節"
+    ]
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "project": "ForgeMind",
+  "version": "2.0 - Enhanced with Repository Practices",
+  "architecture": {
+    "layers": {
+      "0": "Idea (商業想法)",
+      "1": "Module (功能模組 - 對應Package)",
+      "2": "Domain (DDD Bounded Context)",
+      "3": "Requirement (Use Cases)",
+      "4": "Specification (實現細節)"
+    },
+    "package_structure": {
+      "pattern": "tw.company.{module}.{domain}",
+      "subpackages": [
+        "entity/          - Domain objects",
+        "usecase/port/in/ - Use case interfaces",
+        "usecase/port/out/- Repository, Projection",
+        "usecase/service/ - Implementation",
+        "adapter/in/controller/",
+        "adapter/out/database/",
+        "adapter/out/repository/"
+      ],
+      "borrowed_from": "Repository DIRECTORY-RULES.md"
+    }
+  },
+  "sub_agents": {
+    "total": 68,
+    "core_development": {
+      "use_case_layer": [
+        "Command Agent (create/update/delete)",
+        "Query Agent (get/list/search)",
+        "Test Generation Agent (ezSpec BDD)",
+        "Code Review Agent"
+      ],
+      "domain_layer": [
+        "Aggregate Agent (Event Sourcing)",
+        "Aggregate Test Agent",
+        "Aggregate Review Agent",
+        "Value Object Agent"
+      ],
+      "controller_layer": [
+        "Controller Generation Agent",
+        "Controller Test Agent (MockMvc + REST Assured)",
+        "Controller Review Agent"
+      ],
+      "infrastructure": [
+        "Reactor Agent (cross-aggregate consistency)",
+        "Profile Config Agent (Spring Profiles)",
+        "Outbox Agent (Outbox Pattern)",
+        "Repository Config Agent"
+      ]
+    },
+    "borrowed_from": "Repository SUB-AGENT-SYSTEM.md"
+  },
+  "anti_hallucination": {
+    "sources": [
+      "ForgeMind 5大固定模式",
+      "Repository 16個失敗案例 (FAILURE-CASES.md)",
+      "Repository CODE-TEMPLATES.md (標準模板)",
+      "Repository COMMON-PITFALLS.md"
+    ],
+    "total_patterns": "21+",
+    "automated_checks": [
+      "Input/Output structure",
+      "Mapper existence",
+      "Domain Event metadata",
+      "Package structure",
+      "Import correctness (jakarta vs javax)",
+      "Repository pattern usage",
+      "Constructor pattern",
+      "Validation pattern"
+    ]
+  },
+  "automated_quality": {
+    "scripts": [
+      "check-coding-standards.sh",
+      "check-repository-compliance.sh",
+      "check-spec-compliance.sh",
+      "check-mutation-coverage.sh",
+      "check-framework-api-compliance.sh"
+    ],
+    "execution": "AI自動執行，Boss完全不需要知道"
+  },
+  "code_templates": {
+    "location": ".ai/templates/",
+    "categories": [
+      "aggregate/ - Event Sourcing patterns",
+      "usecase/ - Command/Query patterns",
+      "controller/ - REST API patterns",
+      "test/ - ezSpec BDD patterns"
+    ],
+    "borrowed_from": "Repository CODE-TEMPLATES.md"
+  },
+  "traceability": {
+    "bidirectional": true,
+    "levels": [
+      "Idea → Module",
+      "Module → Domain",
+      "Domain → Requirement",
+      "Requirement → Specification",
+      "Specification → Code"
+    ],
+    "automatic_update": true,
+    "impact_analysis": "3秒內完成"
+  },
+  "key_improvements": [
+    "5層結構 + Repository的Package結構",
+    "68個Agent (含Repository的18個Sub-agent實踐)",
+    "21+個Anti-Hallucination patterns",
+    "自動化質量檢查 (5個腳本)",
+    "Code Templates for每一層",
+    "跨Module變更自動協調",
+    "Boss只看Dashboard，AI處理所有複雜性"
+  ]
+}
