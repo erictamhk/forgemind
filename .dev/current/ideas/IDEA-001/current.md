@@ -1,23 +1,27 @@
 # IDEA-001: ForgeMind System
 
-> **Version**: v0.3.1
+> **Version**: v0.3.2
 > **Status**: Clarified
 > **Clarity**: 95%
 
 ## Vision
 
-ForgeMind is an AI agent system where **you (Boss) provide the business idea, and AI agents do all the technical work**. The Facilitator Agent coordinates a team of specialized AI agents and sub-agents to handle every aspect of software development - from requirements to code generation to testing.
+ForgeMind is a **constitution-governed AI agent system** where **you (Boss) provide the business idea, and disciplined AI agents do all the technical work following Plan → Ask → Execute processes**. The Facilitator Agent coordinates a team of specialized AI agents and sub-agents to handle every aspect of software development - from requirements to code generation to testing.
 
-You tell your idea to the Facilitator Agent, and it calls the right agents (BA for requirements, Architect for design, Domain Expert for business logic, etc.) to execute the work. Version control tracks project growth and maintains consistency.
+You tell your idea to the Facilitator Agent, and it calls the right agents (BA for requirements, Architect for design, Domain Expert for business logic, etc.) to execute the work. All agents strictly adhere to constitution principles, ensuring disciplined, hallucination-free development. Version control tracks project growth and maintains consistency.
 
 ## Goals
 
 1. **Boss Mode** - You provide business decisions, AI agents handle all technical complexity through coordinated teamwork
 2. **Agent Collaboration** - Facilitator orchestrates 68+ specialized agents and sub-agents for complete development automation
-3. **Non-Linear Development** - Backtrack any layer anytime, 3-second Impact Analysis
-4. **Zero Technical Debt** - AI auto-maintains consistency, bidirectional traceability
-5. **Quality Assurance** - 21+ Anti-Hallucination checks prevent AI errors
-6. **Progressive Investment** - $0 → $80 → $960 → as needed
+3. **Constitution Compliance** - All agents strictly adhere to project-principles.md governance rules
+4. **Disciplined Process** - Plan → Ask → Execute ensures deliberate, approved actions
+5. **Agent Discipline** - Strict adherence to defined roles prevents undisciplined behavior
+6. **Two-Tier Agent System** - ForgeMind system agents + project-specific domain experts
+7. **Non-Linear Development** - Backtrack any layer anytime, 3-second Impact Analysis
+8. **Zero Technical Debt** - AI auto-maintains consistency, bidirectional traceability
+9. **Quality Assurance** - 21+ Anti-Hallucination checks prevent AI errors
+10. **Progressive Investment** - $0 → $80 → $960 → as needed
 
 ## Target Users
 
@@ -53,11 +57,21 @@ You tell your idea to the Facilitator Agent, and it calls the right agents (BA f
 - **Git repository integration** (simplified, tracks project growth and version control)
 - **CI/CD, IDE, and other integrations**: Not considered for initial phases
 
+## Constitution Foundation
+
+ForgeMind is built on a constitution-based governance framework (project-principles.md) that ensures:
+
+- **Agent Discipline**: All agents follow defined roles and principles strictly
+- **Disciplined Process**: Plan → Ask → Execute for all operations
+- **Constitution Compliance**: Continuous validation against governance rules
+- **Two-Tier Architecture**: System agents (ForgeMind) + Project agents (domain experts)
+- **Anti-Hallucination**: Framework prevents AI fabrication and errors
+
 ## Modules
 
-- **MODULE-001**: Agent Orchestration Engine (coordinate 68+ AI agents and sub-agents)
-- **MODULE-002**: Knowledge & Artifact Management (5-layer structure, traceability, impact analysis)
-- **MODULE-003**: Quality Assurance & Validation (21+ anti-hallucination checks, quality gates)
+- **MODULE-001**: Agent Orchestration Engine (coordinate 68+ AI agents and sub-agents with constitution compliance)
+- **MODULE-002**: Knowledge & Artifact Management (5-layer structure, traceability, impact analysis with disciplined processes)
+- **MODULE-003**: Quality Assurance & Validation (21+ anti-hallucination checks, quality gates, constitution validation)
 
 ## Current Status
 
@@ -69,9 +83,11 @@ You tell your idea to the Facilitator Agent, and it calls the right agents (BA f
 ## Implementation Plan
 
 **Phase 0: Validation** (Current - 1 month)
-- Validate core ForgeMind concepts
+- Validate constitution compliance and disciplined processes
+- Test two-tier agent system functionality
+- Verify anti-hallucination framework effectiveness
 - Test Idea→Module→Domain→Requirement→Spec flow
-- Verify agent system works
+- Verify agent system works with constitution governance
 
 **Phase 1: MVP Build** (2 months)
 - Implement minimum viable ForgeMind
