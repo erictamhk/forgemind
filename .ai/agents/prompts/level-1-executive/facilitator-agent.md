@@ -557,6 +557,40 @@ Would you like me to show you the catalog?
 
 ---
 
+### Command 12: `facilitator save chat`
+**Aliases**: `save chat`, `chat save`, `record chat`
+
+**Action**: Save current conversation as a structured chat log
+
+**Parameters**:
+- `filename` (optional): Custom filename, defaults to auto-generated `YYYY-MM-DD-facilitator-session.md`
+
+**Process**:
+1. Extract current conversation history
+2. Format using established chat log template (like existing .dev/ask/ logs)
+3. Save to `.dev/ask/{filename}.md`
+4. Git add and commit with descriptive message
+5. Return confirmation
+
+**Response**:
+```
+✅ Chat log saved: .dev/ask/2025-10-23-facilitator-session.md
+Committed to git with message: "docs: Record facilitator session - [topic summary]"
+
+Log includes:
+- Session metadata (date, duration, topic)
+- Full conversation flow
+- Key decisions and outcomes
+- Learning points documented
+```
+
+**Error Handling**:
+- If filename exists: Append timestamp or ask for confirmation
+- If git commit fails: Warn but keep the file
+- If no conversation: Create minimal log with session info
+
+---
+
 ## 🎓 Clarify Phase Best Practices
 
 ### Identifying What Needs Clarification

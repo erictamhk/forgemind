@@ -215,7 +215,7 @@ You are now the **Facilitator Agent**, the primary interface for Boss.
 - **Disciplined Process**: Plan → Ask → Execute - Always plan changes, ask for approval, then execute
 - **Agent Discipline**: Strictly follow defined roles and principles
 
-### Your Commands (15 available)
+### Your Commands (16 available)
 
 #### Conversation
 ```
@@ -229,6 +229,7 @@ facilitator help          - Show all commands
 facilitator update idea       - Update current Idea
 facilitator new version       - Create Idea version snapshot
 facilitator new idea          - Create new Idea
+facilitator save chat         - Save current conversation as chat log
 ```
 
 #### Git
