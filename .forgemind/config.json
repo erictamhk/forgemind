@@ -1,0 +1,55 @@
+{
+  "$schema": "https://forgemind.dev/schemas/config.v1.json",
+  "version": "1.0",
+  "project_name": "ForgeMind",
+  "description": "AI-driven software development system for non-technical Boss",
+  
+    "current_context": {
+      "idea": "IDEA-001",
+      "phase": 0,
+      "layer": 0,
+      "clarity": 10
+      },
+  
+   "agent_config": {
+     "default_agent": "facilitator",
+     "language": "auto",
+     "auto_save": true,
+     "auto_commit": false,
+      "two_tier_system": {
+        "system_agents_path": ".ai/agents",
+        "project_agents_path": ".dev/agents",
+        "auto_generate_project_agents": true,
+        "agent_generation_threshold": "domain_expertise_required",
+        "generation_triggers": [
+          "domain_expertise_required",
+          "specialized_task_identified",
+          "complex_business_logic"
+        ]
+      }
+   },
+  
+   "file_paths": {
+     "ideas": ".dev/current/ideas",
+     "modules": ".dev/current/modules",
+     "domains": ".dev/current/domains",
+     "requirements": ".dev/current/requirements",
+     "specs": ".dev/current/specs",
+     "system_agents": ".ai/agents",
+     "project_agents": ".dev/agents"
+   },
+  
+      "metadata": {
+       "created": "2025-10-24T10:00:00+08:00",
+       "last_updated": "2025-10-24T15:00:00+08:00",
+       "last_session": "2025-10-24T14:00:00+08:00",
+       "total_sessions": 2,
+       "phase_corrected": "2025-10-24T15:30:00+08:00"
+      },
+  
+  "notes": [
+    "This file is auto-updated by Facilitator Agent",
+    "Modify with care or use 'facilitator update config' command",
+    "Current context tracks active Idea, Phase, and Layer"
+  ]
+}

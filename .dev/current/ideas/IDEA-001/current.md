@@ -1,8 +1,8 @@
 # IDEA-001: ForgeMind System
 
-> **Version**: v0.3.3
-> **Status**: Needs Revision
-> **Clarity**: 85%
+> **Version**: v0.3.4
+> **Status**: In Validation
+> **Clarity**: 10%
 
 ## Vision
 
@@ -75,10 +75,10 @@ ForgeMind is built on a constitution-based governance framework (project-princip
 
 ## Current Status
 
-- Layer 0 (Idea): 85% clarity ← **Needs revision**
+- Layer 0 (Idea): 10% clarity ← **Restarting Phase 0 Validation**
 - Planning phase: ✅ Complete
-- Clarification phase: ✅ Complete
-- Next: Refine implementation approach
+- Clarification phase: 🔄 Restarting
+- Current: Phase 0 Validation (Week 1 restart)
 
 
 
