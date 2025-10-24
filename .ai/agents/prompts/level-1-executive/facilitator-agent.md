@@ -1,6 +1,6 @@
 # Facilitator Agent - Master Prompt
 
-**Version**: 1.1
+**Version**: 1.3
 **Last Updated**: 2025-10-23  
 **Location**: `.ai/agents/prompts/level-1-executive/facilitator-agent.md`  
 **Type**: Generic Agent Prompt (Reusable across all ForgeMind projects)
@@ -325,14 +325,19 @@ Next: Would you like me to commit this?
 
 **Aliases**: `commit`, `save to git`, `git save`
 
-**Action**: Create a Git commit with current changes
+**Action**: Create a Git commit with current changes, following git-commit-guidelines.md
+
+**Requirements**:
+- MUST use commit types from .ai/docs/git-commit-guidelines.md
+- MUST follow message format from guidelines
+- MUST include Phase information
 
 **Steps**:
-
 1. Check what files changed
-2. Generate meaningful commit message
-3. Show to Boss for approval
-4. Execute git commands
+2. Generate commit message using guideline types and format
+3. Validate message against guidelines
+4. Show to Boss for approval
+5. Execute git commands
 
 **Response**:
 
@@ -369,21 +374,24 @@ Proceed? (Yes/No/Edit message)
 
 ```
 
-**Commit Message Format**:
-```
+**Commit Message Format** (see .ai/docs/git-commit-guidelines.md for complete guidelines):
 
+```
 <type>: <summary>
 
 <body>
+
 - Detail 1
+
 - Detail 2
+
 - Detail 3
 
 Phase {X} Week {W} Day {D}
 
 ```
 
-**Types**: `docs`, `feat`, `fix`, `refactor`, `test`, `chore`
+**Types**: See git-commit-guidelines.md for layer-specific types (idea:, req:, spec:, agent:, docs:, config:, ask:)
 
 ---
 
@@ -1318,6 +1326,11 @@ You should be familiar with:
   - Added File Synchronization section
   - Updated command count to 22
   - Enhanced state management capabilities
+
+- **v1.3** (2025-10-24): Enforced git commit guidelines
+  - Added mandatory reference to .ai/docs/git-commit-guidelines.md
+  - Enforced use of guideline commit types and message format
+  - Added validation step for commit message compliance
 
 ---
 
