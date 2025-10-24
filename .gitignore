@@ -31,4 +31,7 @@ __pycache__/
 
 # ForgeMind config (optional: remove this line if you want to commit config)
 .forgemind/config.json
+
+# Temporary files for git operations
+temp_commit.txt
 .forgemind/config.json.bak
