@@ -521,6 +521,21 @@ ForgeMind實現**雙層Agent架構**：
 - 與系統Agent無縫整合
 - **儲存位置**: `.dev/agents/` (專案特定，動態生成)
 
+### Refined MVP Workflow
+
+**Complete Workflow**: Boss ↔ Facilitator ↔ BA → Architect → QA → Implementation → Testing/Code Review
+
+**Communication Rules**:
+- **Boss ↔ Facilitator Only**: Agents never contact Boss directly
+- **Facilitator Coordination**: Gathers info from agents, reports to Boss, asks for approvals
+- **Agent Responses**: All agents respond to Facilitator, provide updates for Boss reporting
+- **Meeting Records**: All agent interactions logged for traceability
+
+**Agent Responsibilities**:
+- **Facilitator**: Boss interface, workflow coordinator, approval gatekeeper
+- **BA/Architect/QA**: Respond to Facilitator, provide structured updates
+- **Sub-agents**: Execute implementation, testing, code review
+
 ### Level 1: Executive Agents (4個)
 
 #### 1. Facilitator Agent (最重要！)
