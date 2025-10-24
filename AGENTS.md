@@ -27,7 +27,7 @@ This is a **ForgeMind project** with the following structure:
 
 ```
 ├── .ai/                    ← Generic Framework (reusable)
-│   ├── agents/             ← 68 Agent prompts + project agents
+│   ├── agents/             ← 68 Agent prompts (system agents)
 │   ├── constitution/       ← Project principles (constitution.md, project-principles.md)
 │   ├── standards/          ← Anti-Hallucination, Domain theory
 │   ├── templates/          ← Code templates

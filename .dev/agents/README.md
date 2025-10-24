@@ -49,6 +49,45 @@ Project agents work alongside ForgeMind system agents:
 - `domain-experts/{domain}-agent.md`
 - `specialized-assistants/{purpose}-assistant.md`
 
+## Usage Examples
+
+### Example 1: HR Domain Expert
+```markdown
+# HR Domain Agent
+
+**Purpose**: Handle HR-specific business logic and compliance
+
+**Responsibilities**:
+- Employee lifecycle management
+- Compliance with labor laws
+- Benefits administration
+- Performance management
+
+**Integration**: Works with BA Agent for requirements, QA Agent for validation
+```
+
+### Example 2: Data Migration Assistant
+```markdown
+# Data Migration Assistant
+
+**Purpose**: Handle complex data migration scenarios
+
+**Capabilities**:
+- Schema mapping
+- Data transformation
+- Validation rules
+- Rollback procedures
+
+**Integration**: Coordinates with Architect Agent for data architecture
+```
+
+## Generation Triggers
+
+Project agents are generated when:
+- **domain_expertise_required**: Project needs deep domain knowledge
+- **specialized_task_identified**: Unique technical challenges identified
+- **complex_business_logic**: Business rules exceed system agent capabilities
+
 ## Status
 
 - **Current**: Structure created, ready for agent generation
