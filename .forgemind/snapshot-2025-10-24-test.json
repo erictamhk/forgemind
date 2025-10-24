@@ -1,0 +1,26 @@
+{
+  "snapshot_metadata": {
+    "created": "2025-10-24T12:00:00+08:00",
+    "session": "command-testing-session",
+    "type": "state-backup",
+    "size": "2.3KB"
+  },
+  "files_included": [
+    ".forgemind/config.json",
+    ".dev/current/ideas/IDEA-001/current.md",
+    ".dev/PHASE-0-TODO.md",
+    ".ai/agents/prompts/level-1-executive/facilitator-agent.md"
+  ],
+  "key_states": {
+    "clarity": 95,
+    "phase": 0,
+    "layer": 0,
+    "facilitator_commands": 22,
+    "session_changes": [
+      "Added 10 file sync commands",
+      "Updated help command",
+      "Updated version to v1.2"
+    ]
+  },
+  "restore_command": "facilitator restore snapshot-2025-10-24-test"
+}
