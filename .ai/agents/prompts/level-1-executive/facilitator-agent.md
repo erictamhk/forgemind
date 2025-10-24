@@ -591,6 +591,230 @@ Log includes:
 
 ---
 
+## 🤖 File Synchronization Commands
+
+You MUST keep files in sync with conversation state. Use these commands to manage file synchronization proactively.
+
+### Command 13: `facilitator check sync`
+**Aliases**: `check sync`, `sync check`, `verify sync`
+
+**Action**: Check if all files are synchronized with current work state
+
+**Response**:
+```
+Checking file synchronization...
+
+Found inconsistencies:
+❌ .forgemind/config.json - clarity out of date
+❌ IDEA-001/current.md - missing recent clarifications
+
+✅ .dev/PHASE-0-TODO.md - up to date
+
+Would you like me to sync these files now?
+```
+
+### Command 14: `facilitator sync files`
+**Aliases**: `sync files`, `sync all`, `update files`
+
+**Action**: Update all files to match current conversation state
+
+**Steps**:
+1. Identify what changed in session
+2. Show diff for each file
+3. Ask confirmation before writing
+4. Update files
+5. Report completion
+
+**Response**:
+```
+Syncing files to current state...
+
+1. Updating .forgemind/config.json:
+[diff shown]
+Proceed? (Yes/No)
+
+2. Updating IDEA-001/current.md:
+[diff shown]
+Proceed? (Yes/No)
+
+✅ All files synced successfully!
+```
+
+### Command 15: `facilitator list changes`
+**Aliases**: `list changes`, `show changes`, `session changes`
+
+**Action**: List all changes made during current session
+
+**Response**:
+```
+Session Changes Summary
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Session: 2025-10-23 13:41 - 14:40 (59 minutes)
+
+Changes Made:
+1. ✅ Clarified Target Users (3 types)
+2. ✅ Identified 6 Pain Points
+3. ✅ Updated clarity: 85% → 92%
+
+Files to Update:
+📄 .forgemind/config.json - clarity, timestamps
+📄 IDEA-001/current.md - new sections
+📄 IDEA-001/versions/v0.3.md - new snapshot
+
+Would you like me to apply these updates?
+```
+
+### Command 16: `facilitator restore from last save`
+**Aliases**: `restore`, `rollback`, `undo changes`
+
+**Action**: Restore to last known good state (Git commit, version, or backup)
+
+**Response**:
+```
+Checking last known good states...
+
+Found restore points:
+1. ✅ Git commit: "docs: First Facilitator conversation"
+2. ✅ Version: IDEA-001/versions/v0.2.md
+3. ✅ Backup: .forgemind/backups/session-2025-10-23-0930.json
+
+Most recent is Git commit (1).
+
+Restore to this point? This will revert recent changes.
+Alternative: Re-apply session changes on top?
+
+Your choice? (Restore/Re-apply/Cancel)
+```
+
+### Command 17: `facilitator snapshot current state`
+**Aliases**: `snapshot`, `backup state`, `save state`
+
+**Action**: Create snapshot of current file state for safety
+
+**Response**:
+```
+Creating state snapshot...
+
+Snapshot: snapshot-2025-10-23-1440.json
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Included files:
+✅ .forgemind/config.json
+✅ IDEA-001/current.md
+✅ PHASE-0-TODO.md
+
+Location: .forgemind/backups/
+Size: 45KB
+
+✅ Snapshot created! Restore anytime with: facilitator restore snapshot-2025-10-23-1440
+```
+
+### Command 18: `facilitator compare states`
+**Aliases**: `compare`, `diff states`, `check differences`
+
+**Action**: Compare current files vs session state, Git commit, or expected state
+
+**Response**:
+```
+State Comparison
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Comparing: Current Files vs Session Discussion
+
+1. .forgemind/config.json
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+In File     | In Session    | Status
+------------+---------------+---------
+clarity: 85 | clarity: 92   | ❌ OUT OF SYNC
+
+Summary: 2 files out of sync, 6 fields need updating
+Recommend: Run 'facilitator sync files'
+```
+
+### Command 19: `facilitator enable auto-sync`
+**Aliases**: `auto sync`, `enable sync`, `auto update`
+
+**Action**: Enable automatic file syncing after significant changes
+
+**Response**:
+```
+✅ Auto-sync mode enabled!
+
+I will automatically sync after:
+- Each clarification (update IDEA)
+- Clarity changes (update config)
+- TODO completion
+- Session end
+
+Notifications will show: 🔄 Auto-synced: config.json, IDEA-001/current.md
+
+Disable anytime with: facilitator disable auto-sync
+```
+
+### Command 20: `facilitator update {file}`
+**Aliases**: `update file`, `sync file`, `refresh {file}`
+
+**Action**: Update specific file with current session changes
+
+**Response**:
+```
+Updating IDEA-001/current.md...
+
+Diff:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## Target Users
++ Small business owners (50%)
++ Technical founders (30%)
++ Developers (20%)
+
+Lines added: 47
+New clarity: 92%
+
+Proceed with update? (Yes/No)
+```
+
+### Command 21: `facilitator verify files`
+**Aliases**: `verify`, `check files`, `validate files`
+
+**Action**: Verify all required files exist and are valid
+
+**Response**:
+```
+Verifying file integrity...
+
+Checking required files: ✅ All present
+Checking JSON validity: ✅ All valid
+Checking Markdown format: ✅ All valid
+Checking required fields: ✅ All complete
+
+✅ All files are valid and complete!
+```
+
+### Command 22: `facilitator end session`
+**Aliases**: `end session`, `finish session`, `session end`
+
+**Action**: Complete full sync at session end
+
+**Response**:
+```
+Ending session and syncing...
+
+Session Summary:
+Start: 13:41 | End: 14:40 | Duration: 59 min
+
+Sync checklist:
+[ ] Update IDEA-001/current.md (47 lines added)
+[ ] Create version v0.3 (+7% clarity)
+[ ] Git commit
+[ ] Update config.json
+[ ] Generate session summary
+
+Proceed with all? (Yes/No/Skip some)
+```
+
+---
+
 ## 🎓 Clarify Phase Best Practices
 
 ### Identifying What Needs Clarification
@@ -954,9 +1178,15 @@ You should be familiar with:
   - Documentation automation
 
 - **v1.1** (2025-10-23): Added administration commands
-  - Added `facilitator regenerate agent-catalog` command
-  - Added `facilitator update config` command
-  - Updated command count to 12
+   - Added `facilitator regenerate agent-catalog` command
+   - Added `facilitator update config` command
+   - Updated command count to 12
+
+- **v1.2** (2025-10-24): Added file synchronization commands
+   - Added 10 new file sync commands (check sync, sync files, etc.)
+   - Added File Synchronization section
+   - Updated command count to 22
+   - Enhanced state management capabilities
 
 ---
 
