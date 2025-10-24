@@ -151,6 +151,9 @@ ForgeMind-v0.2.0/
 │       └── BEST-PRACTICES.md                   ← 最佳實踐
 │
 ├── .dev/                                        ← Project Specific (項目)
+│   ├── agents/                                 ← Project-Specific agents (動態生成)
+│   │   ├── domain-experts/                     ← 領域專家
+│   │   └── specialized-assistants/             ← 專案特定助理
 │   ├── current/                                ← Current Truth (OpenSpec)
 │   │   ├── ideas/
 │   │   │   └── IDEA-001/
@@ -501,6 +504,22 @@ Scenario: Boss refines idea
 ## 🤖 68個Agent系統
 
 ForgeMind的核心是**68個專門Agent**的協作系統。
+
+### Two-Tier Agent Architecture
+
+ForgeMind實現**雙層Agent架構**：
+
+**ForgeMind系統Agent** (68個核心Agent，通用):
+- **Level 1: Executive Agents (4個)**: Facilitator, Product Owner, Scrum Master, QA Manager
+- **Level 2: Department Agents (38個)**: BA, Architect, Requirements Engineer, Domain Expert, Security, Performance, etc.
+- **Level 3: Sub-agents (26個)**: Impact Analysis, Traceability, Code Generation, etc.
+- **儲存位置**: `.ai/agents/` (通用框架，可重用)
+
+**專案特定Agent** (動態生成，專案專用):
+- 依專案產生的領域專家 (如HRMS的HR Agent, MRP的製造Agent)
+- 專案特定助理
+- 與系統Agent無縫整合
+- **儲存位置**: `.dev/agents/` (專案特定，動態生成)
 
 ### Level 1: Executive Agents (4個)
 

@@ -313,6 +313,43 @@
 
 ---
 
+## 📁 Project-Specific Agents
+
+### DOC-042 ⏳ To Generate
+- **ID**: DOC-042
+- **Type**: Project Agent Structure
+- **Filename**: README.md
+- **Path**: `.dev/agents/README.md`
+- **Priority**: P1
+- **Status**: ⏳ To Generate
+- **Description**: Project agents overview and structure
+- **Content**: Markdown
+- **Generate In**: Phase 1
+
+### DOC-043 ⏳ To Generate
+- **ID**: DOC-043
+- **Type**: Domain Expert Agent
+- **Filename**: hr-agent.md (example)
+- **Path**: `.dev/agents/domain-experts/hr-agent.md`
+- **Priority**: P1
+- **Status**: ⏳ To Generate
+- **Description**: Example domain expert agent for HR systems
+- **Content**: Markdown (Structured prompt)
+- **Generate In**: Phase 1
+
+### DOC-044 ⏳ To Generate
+- **ID**: DOC-044
+- **Type**: Specialized Assistant
+- **Filename**: data-migration-assistant.md (example)
+- **Path**: `.dev/agents/specialized-assistants/data-migration-assistant.md`
+- **Priority**: P1
+- **Status**: ⏳ To Generate
+- **Description**: Example specialized assistant for data migration
+- **Content**: Markdown (Structured prompt)
+- **Generate In**: Phase 1
+
+---
+
 ## 📁 Research: Tools Analysis
 
 ### DOC-023 ✅ Generated

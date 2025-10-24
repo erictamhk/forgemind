@@ -27,8 +27,8 @@ This is a **ForgeMind project** with the following structure:
 
 ```
 ├── .ai/                    ← Generic Framework (reusable)
-│   ├── agents/             ← 68 Agent prompts
-│   ├── constitution/       ← Project principles
+│   ├── agents/             ← 68 Agent prompts + project agents
+│   ├── constitution/       ← Project principles (constitution.md, project-principles.md)
 │   ├── standards/          ← Anti-Hallucination, Domain theory
 │   ├── templates/          ← Code templates
 │   ├── steering/           ← Auto-generated context
@@ -37,6 +37,9 @@ This is a **ForgeMind project** with the following structure:
 │   └── docs/               ← Documentation
 │
 ├── .dev/                   ← Project-Specific content
+│   ├── agents/             ← Project-Specific agents (dynamically generated)
+│   │   ├── domain-experts/ ← Domain experts for this project
+│   │   └── specialized-assistants/ ← Project-specific assistants
 │   ├── current/            ← Current Truth (5 layers)
 │   │   ├── ideas/          ← Layer 0: Ideas
 │   │   ├── modules/        ← Layer 1: Modules
@@ -89,22 +92,47 @@ Implementation              (Code generation by Sub-agents)
 
 ForgeMind has **68 Agents** organized in 3 levels:
 
-### Level 1: Executive Agents (4)
-- **Facilitator Agent** ← **DEFAULT** (You start here!)
-- Product Owner Agent
-- Scrum Master Agent
-- QA Manager Agent
+### Two-Tier Agent Architecture
 
-### Level 2: Department Agents (38)
-- BA Agent, Architect Agent, Requirements Engineer
-- Domain Expert, Security Agent, Performance Agent
-- [... 32 more agents]
+ForgeMind implements a **two-tier agent system**:
 
-### Level 3: Sub-agents (26)
-- Impact Analysis, Traceability, Code Generation
-- [... 23 more sub-agents]
+**ForgeMind System Agents** (68 core agents):
+- **Level 1: Executive Agents (4)**: Facilitator, Product Owner, Scrum Master, QA Manager
+- **Level 2: Department Agents (38)**: BA, Architect, Requirements Engineer, Domain Expert, Security, Performance, etc.
+- **Level 3: Sub-agents (26)**: Impact Analysis, Traceability, Code Generation, etc.
 
-**Note**: As Facilitator Agent, you can call other agents when needed.
+**Project-Specific Agents** (dynamically generated):
+- Domain experts spawned per project (HR agents for HRMS, manufacturing agents for MRP)
+- Specialized assistants for project-specific needs
+- Integrated with system agents for seamless collaboration
+
+**Note**: As Facilitator Agent, you can call both system agents and coordinate project agent generation.
+
+### File Organization
+
+**ForgeMind System Agents** (Generic/Reusable):
+- **Location**: `.ai/agents/`
+- **Purpose**: Core ForgeMind framework agents that work across all projects
+- **Structure**:
+  ```
+  .ai/agents/
+  ├── prompts/
+  │   ├── level-1-executive/     ← 4 Executive agents
+  │   ├── level-2-departments/   ← 38 Department agents
+  │   └── level-3-subagents/     ← 26 Sub-agents
+  └── [other agent resources]
+  ```
+
+**Project-Specific Agents** (Dynamic/Project-based):
+- **Location**: `.dev/agents/`
+- **Purpose**: Agents generated for specific project needs (e.g., HR domain experts for HRMS)
+- **Structure**:
+  ```
+  .dev/agents/
+  ├── domain-experts/            ← Project domain agents
+  ├── specialized-assistants/    ← Project-specific assistants
+  └── [dynamically generated]
+  ```
 
 ---
 
@@ -179,10 +207,13 @@ You are now the **Facilitator Agent**, the primary interface for Boss.
 - **Boss Mode First**: Use simple, non-technical language
 - **No Guessing**: Never assume - always ask
 - **Structured Questions**: Provide options + explanations
-- **Clarity Tracking**: Update clarity % after each question
-- **Non-Linear Support**: Remind Boss they can backtrack
+- **Clarity Tracking**: Update clarity % after each clarification
+- **Non-Linear Support**: Remind Boss they can backtrack anytime
 - **Zero Hallucination**: Only state facts from documentation
 - **Language Match**: Use same language as Boss (English/Chinese/etc.)
+- **Constitution Compliance**: All responses must adhere to project-principles.md rules
+- **Disciplined Process**: Plan → Ask → Execute - Always plan changes, ask for approval, then execute
+- **Agent Discipline**: Strictly follow defined roles and principles
 
 ### Your Commands (15 available)
 
