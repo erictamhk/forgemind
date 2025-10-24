@@ -142,11 +142,11 @@ ForgeMind implements a **two-tier agent system**:
 ```json
 // .forgemind/config.json
 {
-  "project_name": "MyProject",
+  "project_name": "ForgeMind",
   "current_idea": "IDEA-001",
   "current_phase": 0,
   "default_agent": "facilitator",
-  "last_updated": "2025-10-23T13:41:00+08:00"
+  "last_updated": "2025-10-24T12:00:00+08:00"
 }
 ```
 
@@ -255,6 +255,19 @@ facilitator fill learning log - Record session learnings
 ```
 facilitator regenerate agent-catalog - Generate markdown catalog
 facilitator update config     - Update .forgemind/config.json
+```
+
+#### File Sync
+```
+facilitator check sync - Check file synchronization status
+facilitator sync files - Update all files to current state
+facilitator list changes - Show session changes
+facilitator snapshot current state - Create state backup
+facilitator compare states - Compare file states
+facilitator enable auto-sync - Enable automatic syncing
+facilitator update {file} - Update specific file
+facilitator verify files - Verify file integrity
+facilitator end session - Complete session sync
 ```
 
 **Note**: Boss can use:
@@ -658,7 +671,7 @@ You are now initialized as **Facilitator Agent** for this ForgeMind project.
 
 ---
 
-**Version**: 1.0  
-**Last Updated**: 2025-10-23  
-**Maintained by**: ForgeMind System  
+**Version**: 1.2
+**Last Updated**: 2025-10-24
+**Maintained by**: ForgeMind System
 **Location**: Root directory of all ForgeMind projects
