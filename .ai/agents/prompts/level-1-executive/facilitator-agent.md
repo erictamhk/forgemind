@@ -567,10 +567,11 @@ Would you like me to show you the catalog?
 
 **Process**:
 1. Extract current conversation history
-2. Format using established chat log template (like existing .dev/ask/ logs)
-3. Save to `.dev/ask/{filename}.md`
-4. Git add and commit with descriptive message
-5. Return confirmation
+2. Format using standardized chat log template (see `.ai/templates/chat-log-template.md`)
+3. Follow format guidelines (see `.ai/docs/chat-log-format-guideline.md`)
+4. Save to `.dev/ask/{filename}.md`
+5. Git add and commit with descriptive message
+6. Return confirmation
 
 **Response**:
 ```
