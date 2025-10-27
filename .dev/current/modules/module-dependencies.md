@@ -12,41 +12,31 @@ This document defines the dependencies and interfaces between the three core For
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    ForgeMind System                        │
+│                 ForgeMind Framework                        │
 ├─────────────────────────────────────────────────────────────┤
-│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────┐  │
-│  │ MODULE-001      │  │ MODULE-002      │  │ MODULE-003  │  │
-│  │ Agent           │◄►│ Knowledge &     │◄►│ Quality     │  │
-│  │ Orchestration   │  │ Artifact        │  │ Assurance   │  │
-│  │ Engine          │  │ Management      │  │ &           │  │
-│  │                 │  │                 │  │ Validation  │  │
-│  │ (Foundational)  │  │                 │  │             │  │
-│  └─────────────────┘  └─────────────────┘  └─────────────┘  │
+│  ┌─────────────────┐  ┌─────────────────┐                   │
+│  │ MODULE-001      │  │ MODULE-002      │                   │
+│  │ Core            │◄►│ Framework       │                   │
+│  │ Framework       │  │ Infrastructure  │                   │
+│  │ (Agents +       │  │ (Knowledge +    │                   │
+│  │ Protocols)      │  │ Quality)        │                   │
+│  │                 │  │                 │                   │
+│  └─────────────────┘  └─────────────────┘                   │
 └─────────────────────────────────────────────────────────────┘
 ```
 
 ## Dependencies
 
-### MODULE-001: Agent Orchestration Engine
+### MODULE-001: Core Framework
 **Dependencies**: None (foundational layer)
 **Depended By**:
-- MODULE-002: Uses orchestration for artifact processing workflows
-- MODULE-003: Uses orchestration for validation workflows
+- MODULE-002: Uses framework protocols for infrastructure operations
 
-### MODULE-002: Knowledge & Artifact Management
+### MODULE-002: Framework Infrastructure
 **Dependencies**:
-- MODULE-001: Agent Orchestration Engine (for workflow coordination)
+- MODULE-001: Core Framework (for agent coordination and protocols)
 **Depended By**:
-- MODULE-001: Provides artifact storage and retrieval
-- MODULE-003: Provides artifacts for validation
-
-### MODULE-003: Quality Assurance & Validation
-**Dependencies**:
-- MODULE-001: Agent Orchestration Engine (for validation workflows)
-- MODULE-002: Knowledge & Artifact Management (for artifact access)
-**Depended By**:
-- MODULE-001: Provides validation results
-- MODULE-002: Provides quality metrics
+- All AI tools using ForgeMind framework (provides infrastructure services)
 
 ## Interface Definitions
 
