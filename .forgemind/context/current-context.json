@@ -24,8 +24,8 @@
      "current_idea": "IDEA-001",
      "current_layer": 1,
      "layer_name": "MODULE",
-     "clarity": 90,
-     "status": "Ready for MODULE definition"
+     "clarity": 25,
+     "status": "MODULE definitions reviewed, dependencies mapped"
    },
 
   "context_window": {
