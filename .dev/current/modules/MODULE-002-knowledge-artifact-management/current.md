@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Provide comprehensive infrastructure support for the ForgeMind framework, combining knowledge management, artifact lifecycle, quality assurance, and validation. This module ensures "zero technical debt", "non-linear development", and "anti-hallucination" guarantees by managing artifacts from AI tool sessions, maintaining traceability, providing impact analysis, and enforcing quality standards across all framework usage.
+Provide comprehensive infrastructure support for the ForgeMind framework's 6-layer development structure, combining knowledge management, artifact lifecycle, quality assurance, and validation. This module ensures "zero technical debt", "non-linear development", and "anti-hallucination" guarantees by managing artifacts across all layers (IDEA→MODULE→DOMAIN→REQUIREMENT→SPECIFICATION→CODE), maintaining traceability, providing impact analysis, and enforcing quality standards across AI tool sessions.
 
 ## Key Responsibilities
 
@@ -28,7 +28,7 @@ Provide comprehensive infrastructure support for the ForgeMind framework, combin
 
 ### Artifact Repository
 
-- Centralized storage for all 5-layer artifacts created by AI tools using ForgeMind markdown agents
+- Centralized storage for all development artifacts (IDEA, MODULE, DOMAIN, REQUIREMENT, SPECIFICATION, CODE layers) created by AI tools using ForgeMind markdown agents
 - Version management and history tracking for agent-generated content across AI tool sessions
 - Metadata management including markdown agent source, AI tool used, creation context, and validation status
 - Artifact relationship mapping across layers and agent contributions from different AI tools

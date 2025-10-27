@@ -71,7 +71,7 @@ ForgeMind is built on a constitution-based governance framework (project-princip
 ## Modules
 
 - **MODULE-001**: Agent Orchestration Engine (coordinate 68+ AI agents and sub-agents with constitution compliance)
-- **MODULE-002**: Knowledge & Artifact Management (5-layer structure, traceability, impact analysis with disciplined processes)
+- **MODULE-002**: Framework Infrastructure (5-layer artifact management, traceability, impact analysis, quality assurance)
 - **MODULE-003**: Quality Assurance & Validation (21+ anti-hallucination checks, quality gates, constitution validation)
 
 ## Current Status
