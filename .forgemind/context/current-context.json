@@ -1,0 +1,145 @@
+{
+  "version": "1.0",
+  "schema": "forgemind-context-v1",
+
+   "metadata": {
+     "timestamp": "2025-10-27T11:00:00Z",
+     "session_id": "session-2025-10-27-01",
+     "session_start": "2025-10-27T09:00:00Z",
+     "session_duration_minutes": 120,
+     "last_updated_by": "Facilitator Agent"
+   },
+
+  "role": {
+    "agent": "Facilitator Agent",
+    "agent_id": "L1-EXEC-001",
+    "agent_version": "1.4",
+    "mode": "Boss Mode",
+    "capabilities": ["clarify", "coordinate", "track_clarity", "manage_files"]
+  },
+
+   "project": {
+     "name": "ForgeMind",
+     "id": "PROJ-FORGEMIND-001",
+     "current_idea": "IDEA-001",
+     "current_layer": 1,
+     "layer_name": "MODULE",
+     "clarity": 90,
+     "status": "Ready for MODULE definition"
+   },
+
+  "context_window": {
+    "total_tokens": 200000,
+    "used_tokens": 15000,
+    "usage_percent": 7.5,
+    "available_tokens": 185000,
+    "compaction_threshold_percent": 70,
+    "emergency_threshold_percent": 90,
+    "needs_compaction": false,
+    "last_compaction": null,
+    "compressions_this_session": 0
+  },
+
+  "loaded_artifacts": [
+    {
+      "type": "config",
+      "id": "forgemind-config",
+      "name": "Project Configuration",
+      "path": ".forgemind/config.json",
+      "loaded": true,
+      "load_layer": 1,
+      "size_kb": 5,
+      "tokens": 1500,
+      "load_time": "2025-10-27T09:00:00Z",
+      "last_accessed": "2025-10-27T09:45:00Z",
+      "access_count": 3
+    },
+    {
+      "type": "idea",
+      "id": "IDEA-001",
+      "name": "ForgeMind System",
+      "path": ".dev/current/ideas/IDEA-001/current.md",
+      "loaded": false,
+      "load_layer": 2,
+      "size_kb": 50,
+      "tokens": 15000,
+      "summary": "AI-powered software development system with 6-layer architecture",
+      "clarity": 10,
+      "last_modified": "2025-10-27T09:00:00Z",
+      "available": true
+    }
+  ],
+
+  "recent_decisions": [],
+
+  "pending_actions": [
+    {
+      "id": "ACT-001",
+      "action": "Complete Clarify Phase for IDEA-001",
+      "priority": "P0",
+      "layer": 0,
+      "blocked_by": null,
+      "estimated_time_minutes": 60,
+      "assigned_to": "Facilitator Agent",
+      "created": "2025-10-27T09:00:00Z",
+      "due": "2025-10-27T12:00:00Z"
+    },
+    {
+      "id": "ACT-002",
+      "action": "Create layer-organized TODO structure",
+      "priority": "P0",
+      "layer": 0,
+      "blocked_by": "ACT-001",
+      "estimated_time_minutes": 30,
+      "assigned_to": "Facilitator Agent",
+      "created": "2025-10-27T09:15:00Z",
+      "due": "2025-10-27T13:00:00Z"
+    }
+  ],
+
+  "open_questions": [
+    {
+      "id": "Q-001",
+      "question": "What is the core problem ForgeMind aims to solve?",
+      "context": "Starting Clarify Phase for IDEA-001",
+      "asked_by": "Facilitator Agent",
+      "asked_at": "2025-10-27T09:30:00Z",
+      "status": "awaiting_answer",
+      "priority": "high",
+      "blocking": ["ACT-001"]
+    }
+  ],
+
+  "available_commands": [
+    {
+      "command": "facilitator status",
+      "description": "Show project status",
+      "availability": "always"
+    },
+    {
+      "command": "facilitator clarify",
+      "description": "Start clarify session",
+      "availability": "when_clarity_below_90"
+    },
+    {
+      "command": "facilitator update idea",
+      "description": "Update IDEA file",
+      "availability": "when_idea_loaded"
+    },
+    {
+      "command": "facilitator help",
+      "description": "Show all commands",
+      "availability": "always"
+    }
+  ],
+
+   "session_stats": {
+     "messages_exchanged": 31,
+     "clarifications_made": 8,
+     "decisions_recorded": 8,
+     "files_updated": 3,
+     "git_commits": 0,
+     "commands_executed": 4,
+     "errors_encountered": 0
+   }
+}
