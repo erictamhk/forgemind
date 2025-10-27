@@ -10,21 +10,37 @@ Provide comprehensive infrastructure support for the ForgeMind framework's 6-lay
 
 ## Key Responsibilities
 
+### Context Engineering & Memory Management
+1. **Context State Management**: Maintain current-context.json with real-time project state
+2. **Intelligent Artifact Loading**: Load only relevant artifacts based on context (essential → task-specific → historical)
+3. **Memory Persistence**: Update agent memory files (.forgemind/memory/) after each significant event
+4. **Context Window Optimization**: Monitor and manage context usage (<70% threshold)
+5. **Session Continuity**: Preserve context across AI tool sessions and agent interactions
+
 ### Knowledge & Artifact Management
-1. **5-Layer Structure Management**: Maintain Idea/Module/Domain/Requirement/Specification layers
-2. **Artifact Lifecycle**: Create, update, version, and archive all project artifacts from AI tool sessions
-3. **Traceability Matrix**: Maintain bidirectional links between all artifacts
-4. **Impact Analysis**: Provide 3-second impact assessment for changes
-5. **Version Control Integration**: Seamless Git integration for artifact versioning
+6. **5-Layer Structure Management**: Maintain Idea/Module/Domain/Requirement/Specification layers
+7. **Artifact Lifecycle**: Create, update, version, and archive all project artifacts from AI tool sessions
+8. **Traceability Matrix**: Maintain bidirectional links between all artifacts
+9. **Impact Analysis**: Provide 3-second impact assessment for changes
+10. **Version Control Integration**: Seamless Git integration for artifact versioning
 
 ### Quality Assurance & Validation
-6. **Anti-Hallucination Checks**: Implement 21+ validation patterns to prevent AI fabrication
-7. **Quality Gates**: Automated quality assurance checkpoints for AI tool outputs
-8. **Validation Engine**: Real-time validation of artifacts and constitution compliance
-9. **Consistency Checking**: Ensure bidirectional traceability and artifact consistency
-10. **Framework Compliance**: Validate adherence to ForgeMind protocols across AI tools
+11. **Anti-Hallucination Checks**: Implement 21+ validation patterns to prevent AI fabrication
+12. **Quality Gates**: Automated quality assurance checkpoints for AI tool outputs
+13. **Validation Engine**: Real-time validation of artifacts and constitution compliance
+14. **Consistency Checking**: Ensure bidirectional traceability and artifact consistency
+15. **Framework Compliance**: Validate adherence to ForgeMind protocols across AI tools
 
 ## Core Components
+
+### Context Engineering Hub
+
+- Real-time context state management (current-context.json)
+- Intelligent artifact loading strategies (3-layer approach)
+- Context window monitoring and compaction triggers
+- Memory management for agent-specific notes and decisions
+- Session state persistence across AI tool boundaries
+- Context validation and consistency checking
 
 ### Artifact Repository
 

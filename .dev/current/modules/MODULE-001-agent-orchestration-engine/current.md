@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Provide the 68 specialized AI agents as markdown files that existing AI tools (Claude Code, Gemini CLI, OpenCode, Codex) can load and call. Includes integration protocols, templates, and guidelines that enable AI tools to follow constitution-governed, disciplined development processes. The facilitator-agent is one such markdown agent that coordinates the overall development workflow within AI tools.
+Generate and orchestrate 68 specialized AI agents as **Anthropic Agent Skills** - complete filesystem packages with SKILL.md files, YAML metadata, progressive disclosure (3-level loading), and supporting scripts - that existing AI tools (Claude Code, Gemini CLI, OpenCode, Codex) can load and call. Includes multi-tool integration protocols, templates, and guidelines that enable AI tools to follow constitution-governed, disciplined development processes. The facilitator-agent is one such agent skill that coordinates the overall development workflow within AI tools.
 
 **Two-Tier Agent System**:
 - **ForgeMind System Agents**: Core agents (Facilitator, BA, Architect, QA, etc.) that manage the development process
@@ -22,11 +22,19 @@ Provide the 68 specialized AI agents as markdown files that existing AI tools (C
 
 ## Core Components
 
+### Skill Packaging & Progressive Disclosure
+
+- Generate complete Agent Skill packages with SKILL.md, YAML frontmatter, and supporting files
+- Implement 3-level progressive disclosure (metadata → instructions → resources)
+- Create supporting documentation (CONTEXT.md, COMMANDS.md, PLAN_ASK_EXECUTE.md)
+- Package executable scripts and resource templates
+- Validate skill compliance with Agent Skill Specification
+
 ### Agent Registry
 
-- Maintain catalog of all 68+ agents and their capabilities
-- Agent metadata management (prompts, expertise areas, dependencies)
-- Dynamic agent discovery and registration
+- Maintain catalog of all 68+ agent skills and their capabilities
+- Agent metadata management (YAML frontmatter, expertise areas, dependencies)
+- Dynamic agent skill discovery and registration
 
 ### Workflow Engine
 

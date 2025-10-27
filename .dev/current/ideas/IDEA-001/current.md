@@ -6,7 +6,7 @@
 
 ## Vision
 
-ForgeMind is a **framework + agent library** for existing AI tools (Claude Code, Gemini CLI, OpenCode, Codex) that enables **constitution-governed, disciplined software development**. It provides **68 specialized AI agents defined as markdown files** that AI tools can load and call, plus integration protocols, templates, and guidelines for systematic development processes.
+ForgeMind is a **framework + agent library** for existing AI tools (Claude Code, Gemini CLI, OpenCode, Codex) that enables **constitution-governed, disciplined software development**. It provides **68 specialized AI agents as Anthropic Agent Skills** - complete filesystem packages with SKILL.md files, YAML metadata, progressive disclosure (3-level loading), and supporting scripts - that AI tools can load and call, plus integration protocols, templates, and guidelines for systematic development processes.
 
 You use ForgeMind within your preferred AI tool, and it coordinates specialized markdown agents (BA for requirements, Architect for design, Domain Expert for business logic, etc.) following Plan → Ask → Execute processes. All agents adhere to constitution principles, ensuring disciplined, hallucination-free development. The facilitator-agent (like this one) coordinates the overall process as a markdown agent that your AI tool calls.
 
@@ -58,6 +58,16 @@ You use ForgeMind within your preferred AI tool, and it coordinates specialized 
 - **Git repository integration** (simplified, tracks project growth and version control)
 - **CI/CD, IDE, and other integrations**: Not considered for initial phases
 
+## Agent Architecture
+
+ForgeMind implements a **3-tier agent architecture** as 68 specialized Agent Skills:
+
+- **Level 1 (Executive)**: 4 agents - Facilitator, Product Owner, Scrum Master, QA Manager
+- **Level 2 (Department)**: 38 agents - BA, Architect, Domain Expert, Requirements Engineer, Security, Performance, etc.
+- **Level 3 (Sub-agents)**: 26 agents - Impact Analysis, Traceability, Code Generation, Testing, etc.
+
+Each agent skill follows **progressive disclosure** (metadata → instructions → resources) and integrates with **context engineering** for intelligent artifact loading/unloading.
+
 ## Constitution Foundation
 
 ForgeMind is built on a constitution-based governance framework (project-principles.md) that ensures:
@@ -65,14 +75,14 @@ ForgeMind is built on a constitution-based governance framework (project-princip
 - **Agent Discipline**: All agents follow defined roles and principles strictly
 - **Disciplined Process**: Plan → Ask → Execute for all operations
 - **Constitution Compliance**: Continuous validation against governance rules
-- **Two-Tier Architecture**: System agents (ForgeMind) + Project agents (domain experts)
+- **Three-Tier Architecture**: Executive → Department → Sub-agents (all as Agent Skills)
+- **Context Engineering**: Intelligent loading of only relevant artifacts
 - **Anti-Hallucination**: Framework prevents AI fabrication and errors
 
 ## Modules
 
-- **MODULE-001**: Agent Orchestration Engine (coordinate 68+ AI agents and sub-agents with constitution compliance)
-- **MODULE-002**: Framework Infrastructure (5-layer artifact management, traceability, impact analysis, quality assurance)
-- **MODULE-003**: Quality Assurance & Validation (21+ anti-hallucination checks, quality gates, constitution validation)
+- **MODULE-001**: Agent Orchestration Engine (generates 68 Agent Skills with progressive disclosure, coordinates multi-tool integration)
+- **MODULE-002**: Framework Infrastructure (context engineering, knowledge artifact management, quality assurance, memory management)
 
 ## Current Status
 

@@ -6,7 +6,7 @@
 
 ## Overview
 
-This document defines the dependencies and interfaces between the three core ForgeMind modules, ensuring proper integration and data flow.
+This document defines the dependencies and interfaces between the two core ForgeMind modules, ensuring proper integration and data flow.
 
 ## Module Architecture
 
@@ -16,10 +16,11 @@ This document defines the dependencies and interfaces between the three core For
 ├─────────────────────────────────────────────────────────────┤
 │  ┌─────────────────┐  ┌─────────────────┐                   │
 │  │ MODULE-001      │  │ MODULE-002      │                   │
-│  │ Core            │◄►│ Framework       │                   │
-│  │ Framework       │  │ Infrastructure  │                   │
-│  │ (Agents +       │  │ (Knowledge +    │                   │
-│  │ Protocols)      │  │ Quality)        │                   │
+│  │ Agent           │◄►│ Framework       │                   │
+│  │ Orchestration   │  │ Infrastructure  │                   │
+│  │ Engine          │  │ (Knowledge +    │                   │
+│  │ (Skills +       │  │ Quality +       │                   │
+│  │ Integration)    │  │ Context)        │                   │
 │  │                 │  │                 │                   │
 │  └─────────────────┘  └─────────────────┘                   │
 └─────────────────────────────────────────────────────────────┘
@@ -27,14 +28,14 @@ This document defines the dependencies and interfaces between the three core For
 
 ## Dependencies
 
-### MODULE-001: Core Framework
+### MODULE-001: Agent Orchestration Engine
 **Dependencies**: None (foundational layer)
 **Depended By**:
-- MODULE-002: Uses framework protocols for infrastructure operations
+- MODULE-002: Uses orchestration for context management and quality validation workflows
 
 ### MODULE-002: Framework Infrastructure
 **Dependencies**:
-- MODULE-001: Core Framework (for agent coordination and protocols)
+- MODULE-001: Agent Orchestration Engine (for skill coordination and validation workflows)
 **Depended By**:
 - All AI tools using ForgeMind framework (provides infrastructure services)
 
@@ -110,25 +111,24 @@ interface IQualityGate {
 ## Data Flow
 
 ### Artifact Creation Flow
-1. **Agent** generates artifact via MODULE-001 orchestration
-2. **MODULE-002** stores artifact with metadata
-3. **MODULE-003** validates artifact quality
+1. **Agent Skill** generates artifact via MODULE-001 orchestration
+2. **MODULE-002** stores artifact with metadata and manages context
+3. **MODULE-002** validates artifact quality and constitution compliance
 4. **MODULE-001** coordinates approval workflow
-5. **MODULE-002** updates artifact status
+5. **MODULE-002** updates artifact status and context
 
 ### Validation Flow
-1. **MODULE-003** requests artifacts from MODULE-002
-2. **MODULE-003** runs validation checks
-3. **MODULE-003** reports results to MODULE-001
-4. **MODULE-001** coordinates corrective actions if needed
-5. **MODULE-002** updates validation status
+1. **MODULE-002** runs validation checks on artifacts
+2. **MODULE-002** reports results to MODULE-001
+3. **MODULE-001** coordinates corrective actions if needed
+4. **MODULE-002** updates validation status and context
 
 ### Impact Analysis Flow
 1. **Change request** submitted via MODULE-001
-2. **MODULE-002** performs impact analysis
+2. **MODULE-002** performs impact analysis and context validation
 3. **MODULE-002** provides affected artifacts list
 4. **MODULE-001** coordinates review workflow
-5. **MODULE-003** validates change implications
+5. **MODULE-002** validates change implications against constitution
 
 ## Integration Points
 
