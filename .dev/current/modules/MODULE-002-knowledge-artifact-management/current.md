@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Provide comprehensive infrastructure support for the ForgeMind framework's 6-layer development structure, combining knowledge management, artifact lifecycle, quality assurance, and validation. This module ensures "zero technical debt", "non-linear development", and "anti-hallucination" guarantees by managing artifacts across all layers (IDEA→MODULE→DOMAIN→REQUIREMENT→SPECIFICATION→CODE), maintaining traceability, providing impact analysis, and enforcing quality standards across AI tool sessions.
+Provide comprehensive infrastructure support for the ForgeMind framework's **Two-Tier Agent Architecture** and 6-layer development structure, combining knowledge management, artifact lifecycle, quality assurance, and validation. This module ensures "zero technical debt", "non-linear development", and "anti-hallucination" guarantees by managing artifacts across all layers (IDEA→MODULE→DOMAIN→REQUIREMENT→SPECIFICATION→CODE), maintaining traceability, providing impact analysis, and enforcing quality standards across both system agents and project-specific domain experts.
 
 ## Key Responsibilities
 

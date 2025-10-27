@@ -60,11 +60,16 @@ You use ForgeMind within your preferred AI tool, and it coordinates specialized 
 
 ## Agent Architecture
 
-ForgeMind implements a **3-tier agent architecture** as 68 specialized Agent Skills:
+ForgeMind implements a **Two-Tier Agent Architecture** within a 3-tier skill structure:
 
-- **Level 1 (Executive)**: 4 agents - Facilitator, Product Owner, Scrum Master, QA Manager
-- **Level 2 (Department)**: 38 agents - BA, Architect, Domain Expert, Requirements Engineer, Security, Performance, etc.
-- **Level 3 (Sub-agents)**: 26 agents - Impact Analysis, Traceability, Code Generation, Testing, etc.
+### Two-Tier Architecture
+- **System Agents (ForgeMind)**: Core 68 agents that are part of the ForgeMind framework
+- **Project Agents (Domain Experts)**: Dynamically generated agent skills for specific project domains
+
+### 3-Tier Skill Structure
+- **Level 1 (Executive)**: 4 system agents - Facilitator, Product Owner, Scrum Master, QA Manager
+- **Level 2 (Department)**: 38 system agents - BA, Architect, Domain Expert, Requirements Engineer, Security, Performance, etc.
+- **Level 3 (Sub-agents)**: 26 system agents - Impact Analysis, Traceability, Code Generation, Testing, etc.
 
 Each agent skill follows **progressive disclosure** (metadata → instructions → resources) and integrates with **context engineering** for intelligent artifact loading/unloading.
 
@@ -75,13 +80,13 @@ ForgeMind is built on a constitution-based governance framework (project-princip
 - **Agent Discipline**: All agents follow defined roles and principles strictly
 - **Disciplined Process**: Plan → Ask → Execute for all operations
 - **Constitution Compliance**: Continuous validation against governance rules
-- **Three-Tier Architecture**: Executive → Department → Sub-agents (all as Agent Skills)
+- **Two-Tier Architecture**: System agents (ForgeMind) + Project agents (domain experts)
 - **Context Engineering**: Intelligent loading of only relevant artifacts
 - **Anti-Hallucination**: Framework prevents AI fabrication and errors
 
 ## Modules
 
-- **MODULE-001**: Agent Orchestration Engine (generates 68 Agent Skills with progressive disclosure, coordinates multi-tool integration)
+- **MODULE-001**: Agent Orchestration Engine (generates 68 system Agent Skills + project domain experts, coordinates multi-tool integration)
 - **MODULE-002**: Framework Infrastructure (context engineering, knowledge artifact management, quality assurance, memory management)
 
 ## Current Status

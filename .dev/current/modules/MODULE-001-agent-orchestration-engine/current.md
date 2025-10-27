@@ -6,11 +6,28 @@
 
 ## Purpose
 
-Generate and orchestrate 68 specialized AI agents as **Anthropic Agent Skills** - complete filesystem packages with SKILL.md files, YAML metadata, progressive disclosure (3-level loading), and supporting scripts - that existing AI tools (Claude Code, Gemini CLI, OpenCode, Codex) can load and call. Includes multi-tool integration protocols, templates, and guidelines that enable AI tools to follow constitution-governed, disciplined development processes. The facilitator-agent is one such agent skill that coordinates the overall development workflow within AI tools.
+Generate and orchestrate AI agents as **Anthropic Agent Skills** following a **Two-Tier Architecture**:
 
-**Two-Tier Agent System**:
-- **ForgeMind System Agents**: Core agents (Facilitator, BA, Architect, QA, etc.) that manage the development process
-- **Project-Specific Agents**: Domain experts dynamically generated per project (HR agents for HRMS, manufacturing agents for MRP, etc.)
+- **System Agents (ForgeMind)**: Generate the core 68 specialized AI agents as complete filesystem packages
+- **Project Agents (Domain Experts)**: Dynamically generate domain-specific agent skills per project
+
+All agents are complete filesystem packages with SKILL.md files, YAML metadata, progressive disclosure (3-level loading), and supporting scripts that existing AI tools (Claude Code, Gemini CLI, OpenCode, Codex) can load and call. Includes multi-tool integration protocols, templates, and guidelines that enable AI tools to follow constitution-governed, disciplined development processes.
+
+## Two-Tier Agent Architecture
+
+ForgeMind implements a **Two-Tier Agent System**:
+
+### System Agents (ForgeMind Core)
+- **Pre-built**: 68 specialized agents that are part of the ForgeMind framework
+- **Standardized**: Follow consistent Agent Skill specifications
+- **Universal**: Work across all projects and domains
+- **Examples**: Facilitator, BA, Architect, Domain Expert, Requirements Engineer, QA, etc.
+
+### Project Agents (Domain Experts)
+- **Dynamic**: Generated on-demand for specific project domains
+- **Contextual**: Tailored to project-specific business domains
+- **Flexible**: Adapt to unique project requirements
+- **Examples**: HR Domain Expert (for HRMS), Manufacturing Domain Expert (for MRP), Finance Domain Expert (for ERP), etc.
 
 ## Key Responsibilities
 
