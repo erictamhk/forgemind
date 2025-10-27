@@ -1,12 +1,12 @@
 # MODULE-002: Knowledge & Artifact Management
 
-> **Version**: v1.0.0
-> **Status**: Defined
+> **Version**: v1.1.0
+> **Status**: Updated for Framework Approach
 > **Parent Idea**: IDEA-001
 
 ## Purpose
 
-Manage the complete 5-layer structure, maintain bidirectional traceability, and provide 3-second impact analysis. This module handles the "zero technical debt" and "non-linear development" capabilities by tracking all artifacts created by AI agents and maintaining consistency across the development process.
+Manage the complete 5-layer structure, maintain bidirectional traceability, and provide 3-second impact analysis within the ForgeMind framework. This module handles the "zero technical debt" and "non-linear development" capabilities by tracking all artifacts created when AI tools load and use ForgeMind's markdown agents, maintaining consistency across AI tool sessions and agent calls.
 
 ## Key Responsibilities
 
@@ -20,13 +20,13 @@ Manage the complete 5-layer structure, maintain bidirectional traceability, and 
 
 ### Artifact Repository
 
-- Centralized storage for all 5-layer artifacts created by AI agents
-- Version management and history tracking for agent-generated content
-- Metadata management including agent source, creation context, and validation status
-- Artifact relationship mapping across layers and agent contributions
+- Centralized storage for all 5-layer artifacts created by AI tools using ForgeMind markdown agents
+- Version management and history tracking for agent-generated content across AI tool sessions
+- Metadata management including markdown agent source, AI tool used, creation context, and validation status
+- Artifact relationship mapping across layers and agent contributions from different AI tools
 - Constitution compliance validation for all stored artifacts
-- Agent discipline tracking in metadata
-- Disciplined process logging for artifact lifecycle events
+- Markdown agent discipline tracking in metadata (which specific agent was loaded)
+- Disciplined process logging for artifact lifecycle events within AI tool sessions
 
 ### Traceability Engine
 
@@ -51,6 +51,12 @@ Manage the complete 5-layer structure, maintain bidirectional traceability, and 
 - Conflict resolution
 - Branch and merge support
 
+### Session Management
+- AI tool session tracking (Claude Code, Gemini CLI, OpenCode sessions)
+- Markdown agent loading history (which agents were used in each session)
+- Cross-session artifact relationships and consistency validation
+- Session-based artifact grouping for multi-tool development workflows
+
 ## Domains
 
 - **DOMAIN-001**: Artifact Management (storage and lifecycle)
@@ -59,7 +65,7 @@ Manage the complete 5-layer structure, maintain bidirectional traceability, and 
 
 ## Dependencies
 
-- **MODULE-001**: Agent Orchestration Engine (uses orchestration for complex analysis tasks)
+- **MODULE-001**: Agent Library & Integration Framework (uses framework protocols for analysis tasks)
 
 ## Depended By
 
