@@ -1,12 +1,12 @@
-# MODULE-001: Agent Orchestration Engine
+# MODULE-001: Agent Library & Integration Framework
 
-> **Version**: v1.0.0
-> **Status**: Defined
+> **Version**: v1.1.0
+> **Status**: Updated for Framework Approach
 > **Parent Idea**: IDEA-001
 
 ## Purpose
 
-Coordinate and manage the 68+ AI agents and sub-agents that execute all technical work in ForgeMind. Each AI agent is a specialized AI assistant with a specific role, detailed prompt, and capabilities. This orchestration enables the "AI agents do all the work" vision by managing agent lifecycles, task delegation, and inter-agent communication.
+Provide the 68 specialized AI agents as markdown files that existing AI tools (Claude Code, Gemini CLI, OpenCode, Codex) can load and call. Includes integration protocols, templates, and guidelines that enable AI tools to follow constitution-governed, disciplined development processes. The facilitator-agent is one such markdown agent that coordinates the overall development workflow within AI tools.
 
 **Two-Tier Agent System**:
 - **ForgeMind System Agents**: Core agents (Facilitator, BA, Architect, QA, etc.) that manage the development process

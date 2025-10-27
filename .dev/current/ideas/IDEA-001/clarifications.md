@@ -152,6 +152,26 @@ D. No - Want to backtrack and change something in IDEA
 
 ---
 
+### Additional Clarification: ForgeMind as Framework + Agent Library
+
+**Context:** Post-Layer 0 completion, clarifying the core ForgeMind concept.
+
+**Question:** What is the fundamental nature of ForgeMind?
+
+**Answer:** ForgeMind is a framework/toolkit for existing AI tools that also provides 68 agents written as markdown files. AI tools (OpenCode, Claude Code, etc.) call these markdown agents for disciplined development processes. The facilitator-agent is one such markdown agent that coordinates the overall process.
+
+**Recorded:** ForgeMind provides:
+1. Framework/toolkit for existing AI agent tools
+2. 68 agents defined as markdown files that AI tools can call
+3. Integration protocols and guidelines for disciplined development
+4. Facilitator-agent as a markdown agent for coordination
+
+**Impact:** Shifts from standalone system to framework + agent library approach.
+
+**Clarity Impact:** 90% → 95% (better alignment with implementation approach)
+
+---
+
 ## Key Decisions from Clarification
 
 1. **Core Problem:** All pain points (vague requirements, AI discipline, change management, etc.)

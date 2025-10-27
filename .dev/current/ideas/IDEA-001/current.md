@@ -6,22 +6,23 @@
 
 ## Vision
 
-ForgeMind is a **constitution-governed AI agent system** where **you (Boss) provide the business idea, and disciplined AI agents do all the technical work following Plan → Ask → Execute processes**. The Facilitator Agent coordinates a team of specialized AI agents and sub-agents to handle every aspect of software development - from requirements to code generation to testing.
+ForgeMind is a **framework + agent library** for existing AI tools (Claude Code, Gemini CLI, OpenCode, Codex) that enables **constitution-governed, disciplined software development**. It provides **68 specialized AI agents defined as markdown files** that AI tools can load and call, plus integration protocols, templates, and guidelines for systematic development processes.
 
-You tell your idea to the Facilitator Agent, and it calls the right agents (BA for requirements, Architect for design, Domain Expert for business logic, etc.) to execute the work. All agents strictly adhere to constitution principles, ensuring disciplined, hallucination-free development. Version control tracks project growth and maintains consistency.
+You use ForgeMind within your preferred AI tool, and it coordinates specialized markdown agents (BA for requirements, Architect for design, Domain Expert for business logic, etc.) following Plan → Ask → Execute processes. All agents adhere to constitution principles, ensuring disciplined, hallucination-free development. The facilitator-agent (like this one) coordinates the overall process as a markdown agent that your AI tool calls.
 
 ## Goals
 
-1. **Boss Mode** - You provide business decisions, AI agents handle all technical complexity through coordinated teamwork
-2. **Agent Collaboration** - Facilitator orchestrates 68+ specialized agents and sub-agents for complete development automation
-3. **Constitution Compliance** - All agents strictly adhere to project-principles.md governance rules
-4. **Disciplined Process** - Plan → Ask → Execute ensures deliberate, approved actions
-5. **Agent Discipline** - Strict adherence to defined roles prevents undisciplined behavior
-6. **Two-Tier Agent System** - ForgeMind system agents + project-specific domain experts
-7. **Non-Linear Development** - Backtrack any layer anytime, 3-second Impact Analysis
-8. **Zero Technical Debt** - AI auto-maintains consistency, bidirectional traceability
-9. **Quality Assurance** - 21+ Anti-Hallucination checks prevent AI errors
-10. **Progressive Investment** - $0 → $80 → $960 → as needed
+1. **Framework Integration** - Seamlessly works within existing AI tools (Claude Code, Gemini CLI, OpenCode, Codex)
+2. **Agent Library** - Provides 68 specialized markdown agents that AI tools can call for specific development tasks
+3. **Boss Mode** - You provide business decisions, ForgeMind agents handle all technical complexity
+4. **Constitution Compliance** - All agents strictly adhere to project-principles.md governance rules
+5. **Disciplined Process** - Plan → Ask → Execute ensures deliberate, approved actions within AI tools
+6. **Markdown Agents** - Agents defined as markdown files that AI tools load and execute
+7. **Two-Tier Agent System** - ForgeMind system agents + project-specific domain experts (all as markdown)
+8. **Non-Linear Development** - Backtrack any layer anytime, 3-second Impact Analysis
+9. **Zero Technical Debt** - AI auto-maintains consistency, bidirectional traceability
+10. **Quality Assurance** - 21+ Anti-Hallucination checks prevent AI errors
+11. **Open Source** - Freely available framework and agent library
 
 ## Target Users
 

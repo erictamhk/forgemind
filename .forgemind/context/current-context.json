@@ -24,8 +24,8 @@
      "current_idea": "IDEA-001",
      "current_layer": 1,
      "layer_name": "MODULE",
-     "clarity": 25,
-     "status": "MODULE definitions reviewed, dependencies mapped"
+     "clarity": 30,
+     "status": "MODULE-001 updated for framework approach, IDEA clarified as framework + agent library"
    },
 
   "context_window": {
